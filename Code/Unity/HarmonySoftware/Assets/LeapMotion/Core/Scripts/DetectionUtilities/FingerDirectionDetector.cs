@@ -8,8 +8,10 @@
  ******************************************************************************/
 
 using UnityEngine;
+using UnityEditor;
 using System.Collections;
 using Leap.Unity.Attributes;
+using Leap;
 
 namespace Leap.Unity {
   /**
@@ -44,8 +46,8 @@ namespace Leap.Unity {
      * @since 4.1.2
      */
     [Tooltip("The hand model to watch. Set automatically if detector is on a hand.")]
-    public HandModelBase HandModel = null;  
-
+    public HandModelBase HandModel = null;
+    
     /**
      * The finger to compare to the specified direction.
      * @since 4.1.2
@@ -53,22 +55,23 @@ namespace Leap.Unity {
     [Tooltip("The finger to observe.")]
     public Finger.FingerType FingerName = Finger.FingerType.TYPE_INDEX;
 
-
+    public GameObject cursor = null;
+    
     /**
-     * Specifies how to interprete the direction specified by PointingDirection.
-     * 
-     * - RelativeToCamera -- the target direction is defined relative to the camera's forward vector, i.e. (0, 0, 1) is the cmaera's 
-     *                       local forward direction.
-     * - RelativeToHorizon -- the target direction is defined relative to the camera's forward vector, 
-     *                        except that it does not change with pitch.
-     * - RelativeToWorld -- the target direction is defined as a global direction that does not change with camera movement. For example,
-     *                      (0, 1, 0) is always world up, no matter which way the camera is pointing.
-     * - AtTarget -- a target object is used as the pointing direction (The specified PointingDirection is ignored).
-     * 
-     * In VR scenes, RelativeToHorizon with a direction of (0, 0, 1) for camera forward and RelativeToWorld with a direction
-     * of (0, 1, 0) for absolute up, are often the most useful settings.
-     * @since 4.1.2
-     */
+        * Specifies how to interprete the direction specified by PointingDirection.
+        * 
+        * - RelativeToCamera -- the target direction is defined relative to the camera's forward vector, i.e. (0, 0, 1) is the cmaera's 
+        *                       local forward direction.
+        * - RelativeToHorizon -- the target direction is defined relative to the camera's forward vector, 
+        *                        except that it does not change with pitch.
+        * - RelativeToWorld -- the target direction is defined as a global direction that does not change with camera movement. For example,
+        *                      (0, 1, 0) is always world up, no matter which way the camera is pointing.
+        * - AtTarget -- a target object is used as the pointing direction (The specified PointingDirection is ignored).
+        * 
+        * In VR scenes, RelativeToHorizon with a direction of (0, 0, 1) for camera forward and RelativeToWorld with a direction
+        * of (0, 1, 0) for absolute up, are often the most useful settings.
+        * @since 4.1.2
+        */
     [Header("Direction Settings")]
     [Tooltip("How to treat the target direction.")]
     public PointingType PointingType = PointingType.RelativeToHorizon;
@@ -112,12 +115,15 @@ namespace Leap.Unity {
     [Tooltip("Draw this detector's Gizmos, if any. (Gizmos must be on in Unity edtor, too.)")]
     public bool ShowGizmos = true;
 
+
     private IEnumerator watcherCoroutine;
 
+
+
     private void OnValidate(){
-      if( OffAngle < OnAngle){
+        if( OffAngle < OnAngle){
         OffAngle = OnAngle;
-      }
+        }
     }
 
     private void Awake () {
@@ -205,7 +211,9 @@ namespace Leap.Unity {
         Utils.DrawCone(finger.TipPosition.ToVector3(), fingerDirection, OnAngle, finger.Length, innerColor);
         Utils.DrawCone(finger.TipPosition.ToVector3(), fingerDirection, OffAngle, finger.Length, LimitColor);
         Gizmos.color = DirectionColor;
-        Gizmos.DrawRay(finger.TipPosition.ToVector3(), selectedDirection(finger.TipPosition.ToVector3()));
+                //Gizmos.DrawRay(finger.TipPosition.ToVector3(), selectedDirection(finger.TipPosition.ToVector3())*500);
+        Vector3 Direction = finger.Direction.ToVector3();
+        Gizmos.DrawRay(finger.TipPosition.ToVector3(), Direction*500);        
       }
     }
   #endif

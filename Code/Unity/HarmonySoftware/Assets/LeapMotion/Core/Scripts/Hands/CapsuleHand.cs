@@ -127,10 +127,7 @@ namespace Leap.Unity {
                     //키 = 핑거 인덱스*4 + 조인트 인덱스
           Vector3 position = finger.Bone((Bone.BoneType)j).NextJoint.ToVector3();
           _spherePositions[key] = position;
-          if (key == 7)
-                    {
-                        //캔버스 상에서 좌표 생성 구현해야됨
-                    }
+          
           drawSphere(position);
         }
       }
@@ -180,8 +177,18 @@ namespace Leap.Unity {
                     
           Vector3 posA = _spherePositions[keyA];
           Vector3 posB = _spherePositions[keyB];
+          if(keyB == 8)
+                    {
+                        Vector3 z = new Vector3(100, 100, 100);
+                        //GameObject cylinder = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+                        drawCylinder(posB, z);
+                        //cylinder.transform.position = posB;
+                        //cylinder.transform.localScale = new Vector3(100, 100, 100);
 
-          drawCylinder(posA, posB);
+                    }
+                    drawCylinder(posA, posB);
+          
+          
         }
       }
 
