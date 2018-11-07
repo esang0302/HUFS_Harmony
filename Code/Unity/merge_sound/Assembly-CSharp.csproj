@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AudioWaveFormVisualizerXXX.cs" />
     <Compile Include="Assets\GracesGames\Common\Scripts\FiniteStack.cs" />
     <Compile Include="Assets\GracesGames\Common\Scripts\Utilities.cs" />
     <Compile Include="Assets\GracesGames\SimpleFileBrowser\DemoFiles\NewBehaviourScript.cs" />
