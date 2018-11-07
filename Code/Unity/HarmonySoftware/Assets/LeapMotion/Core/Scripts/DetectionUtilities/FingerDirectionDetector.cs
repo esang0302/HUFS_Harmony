@@ -12,6 +12,7 @@ using UnityEditor;
 using System.Collections;
 using Leap.Unity.Attributes;
 using Leap;
+using UnityEngine.UI;
 
 namespace Leap.Unity {
   /**
@@ -38,7 +39,7 @@ namespace Leap.Unity {
     [Units("seconds")]
     [Tooltip("The interval in seconds at which to check this detector's conditions.")]
     [MinValue(0)]
-    public float Period = .1f; //seconds
+    public float Period = .01f; //seconds
 
     /**
      * The HandModelBase instance to observe. 
@@ -114,10 +115,10 @@ namespace Leap.Unity {
     [Header("")]
     [Tooltip("Draw this detector's Gizmos, if any. (Gizmos must be on in Unity edtor, too.)")]
     public bool ShowGizmos = true;
-
-
+    GameObject cube;
+        Vector3 tippos; 
     private IEnumerator watcherCoroutine;
-
+    //public cursor_color = null;
 
 
     private void OnValidate(){
@@ -128,6 +129,10 @@ namespace Leap.Unity {
 
     private void Awake () {
       watcherCoroutine = fingerPointingWatcher();
+        cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        cube.GetComponent<MeshRenderer>().material.color = Color.red;
+        cube.tag = "cursor";
+        cube.transform.localScale = new Vector3(5, 5, 2);
     }
 
     private void OnEnable () {
@@ -144,17 +149,26 @@ namespace Leap.Unity {
       Vector3 fingerDirection;
       Vector3 targetDirection;
       int selectedFinger = selectedFingerOrdinal();
-      while(true){
+        while (true){
         if(HandModel != null && HandModel.IsTracked){
           hand = HandModel.GetLeapHand();
           if(hand != null){
             targetDirection = selectedDirection(hand.Fingers[selectedFinger].TipPosition.ToVector3());
             fingerDirection = hand.Fingers[selectedFinger].Bone(Bone.BoneType.TYPE_DISTAL).Direction.ToVector3();
             float angleTo = Vector3.Angle(fingerDirection, targetDirection);
-            if(HandModel.IsTracked && angleTo <= OnAngle){
+
+            Finger finger = HandModel.GetLeapHand().Fingers[selectedFingerOrdinal()];
+            Vector3 Direction = finger.Direction.ToVector3();
+            tippos = finger.TipPosition.ToVector3();
+
+            if (HandModel.IsTracked && angleTo <= OnAngle){
               Activate();
+              //Finger가 활성화 됬을때 Finger TipPosition으로부터의 직선 방정식과 Canvas가 있는
+              //Z축의 평면으로부터의 접점을 찾아 Cube를 띄워준다
+              cube.transform.position = tippos + (-(tippos.z))*Direction/(Direction.z);
             } else if (!HandModel.IsTracked || angleTo >= OffAngle) {
               Deactivate();
+              cube.transform.position = new Vector3(0, 0, 0);
             }
           }
         }
@@ -213,8 +227,9 @@ namespace Leap.Unity {
         Gizmos.color = DirectionColor;
                 //Gizmos.DrawRay(finger.TipPosition.ToVector3(), selectedDirection(finger.TipPosition.ToVector3())*500);
         Vector3 Direction = finger.Direction.ToVector3();
-        Gizmos.DrawRay(finger.TipPosition.ToVector3(), Direction*500);        
-      }
+        Gizmos.DrawRay(finger.TipPosition.ToVector3(), Direction*500);
+        //cylinder.transform.position = finger.TipPosition.ToVector3();
+        }
     }
   #endif
   }
