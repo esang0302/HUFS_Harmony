@@ -61,8 +61,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\buttonMute.cs" />
+    <Compile Include="Assets\GracesGames\Common\Scripts\FiniteStack.cs" />
+    <Compile Include="Assets\GracesGames\Common\Scripts\Utilities.cs" />
+    <Compile Include="Assets\GracesGames\SimpleFileBrowser\DemoFiles\NewBehaviourScript.cs" />
+    <Compile Include="Assets\GracesGames\SimpleFileBrowser\Scripts\AlphanumComparatorFast.cs" />
+    <Compile Include="Assets\GracesGames\SimpleFileBrowser\Scripts\DemoCaller.cs" />
+    <Compile Include="Assets\GracesGames\SimpleFileBrowser\Scripts\FileBrowser.cs" />
+    <Compile Include="Assets\GracesGames\SimpleFileBrowser\Scripts\UI\FileButton.cs" />
+    <Compile Include="Assets\GracesGames\SimpleFileBrowser\Scripts\UI\LandscapeUserInterface.cs" />
+    <Compile Include="Assets\GracesGames\SimpleFileBrowser\Scripts\UI\PortraitUserInterface.cs" />
+    <Compile Include="Assets\GracesGames\SimpleFileBrowser\Scripts\UI\UserInterface.cs" />
+    <Compile Include="Assets\importAudio.cs" />
     <Compile Include="Assets\mixLevel.cs" />
+    <Compile Include="Assets\muteAndSolo.cs" />
+    <Compile Include="Assets\test.cs" />
+    <None Include="Assets\GracesGames\SimpleFileBrowser\ReadMe.txt" />
+    <None Include="Assets\GracesGames\SimpleFileBrowser\DemoFiles\TextFileWithNewLines.txt" />
+    <None Include="Assets\GracesGames\SimpleFileBrowser\Sprites\IconMonstrLicense.txt" />
+    <None Include="Assets\GracesGames\Third-Party Notices.txt" />
+    <None Include="Assets\GracesGames\SimpleFileBrowser\DemoFiles\DemoText.txt" />
+    <None Include="Assets\GracesGames\SimpleFileBrowser\Sprites\KenneySpritesLicense.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/김준영/Documents/merge_sound/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
