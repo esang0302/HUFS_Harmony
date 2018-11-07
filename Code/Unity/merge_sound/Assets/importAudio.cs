@@ -11,26 +11,23 @@ public class importAudio : MonoBehaviour {
     AudioClip loadedClip;
     private string musicFile;
 
-    void Start () {
+    public void findFile () {
         musicFile = EditorUtility.OpenFilePanel("Load files", "", "");
-        Debug.Log(musicFile);
         StartCoroutine(loadAudio());
     }
 
-    IEnumerator loadAudio()
+    public IEnumerator loadAudio()
     {
-        WWW audioLoader = new WWW("file:///" + musicFile);
-        while (!audioLoader.isDone) 
-            Debug.Log(audioLoader.progress);
-        yield return audioLoader;
+        WWW audio_loader = new WWW("file:///"+musicFile);
+        while (!audio_loader.isDone)
+
+            Debug.Log(audio_loader.progress);
+        yield return audio_loader;
         
-            
-        Debug.Log(audioLoader.progress);
-
-        Debug.Log(audioLoader.url);
-        Debug.Log(audioLoader.GetAudioClip(true,false,AudioType.WAV).name);
-        audio.clip = audioLoader.GetAudioClip(true, false, AudioType.WAV);
-        audio.Play();
+        Debug.Log(audio_loader.progress);
+        Debug.Log(audio_loader.url);
+        loadedClip = audio_loader.GetAudioClip(false, false,AudioType.WAV);
+        audio = gameObject.GetComponent<AudioSource>();
+        audio.clip = loadedClip;
     }
-
 }
