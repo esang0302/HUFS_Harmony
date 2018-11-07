@@ -62,7 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AccordingToMagnitude.cs" />
+    <Compile Include="Assets\Almgp_particle_vol_1\script\sprite_sheet.cs" />
     <Compile Include="Assets\audioclips.cs" />
+    <Compile Include="Assets\grab.cs" />
     <Compile Include="Assets\LeapMotion\Core\Examples\Example Assets\InertiaPostProcessProvider.cs" />
     <Compile Include="Assets\LeapMotion\Core\Examples\Example Assets\ProjectionPostProcessProvider.cs" />
     <Compile Include="Assets\LeapMotion\Core\Plugins\LeapCSharp\Arm.cs" />
@@ -314,6 +316,7 @@
     <Compile Include="Assets\LeapMotion\Modules\InteractionEngine\Scripts\Utility\PhysicsCallbacks.cs" />
     <Compile Include="Assets\particle.cs" />
     <Compile Include="Assets\SoundByContact.cs" />
+    <Compile Include="Assets\SoundWithDelay.cs" />
     <Compile Include="Assets\UETools\Magic_Particle_Effects\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\velocity.cs" />
     <Compile Include="Assets\VelocityWithDelay.cs" />
@@ -326,8 +329,11 @@
     <None Include="Assets\LeapMotion\Core\readme.txt" />
     <None Include="Assets\kits\DubStep\DubStep.xml" />
     <None Include="Assets\LeapMotion\Core\Shaders\RuntimeGizmos.shader" />
+    <None Include="Assets\Almgp_particle_vol_1\shaders\emmision_particle.shader" />
     <None Include="Assets\kits\Trance\Trance.xml" />
     <None Include="Assets\kits\Techno 2\Techno 2.xml" />
+    <None Include="Assets\Almgp_particle_vol_1\shaders\multypower_particle.shader" />
+    <None Include="Assets\Almgp_particle_vol_1\README.txt" />
     <None Include="Assets\kits\DrumNBass 2\DrumNBass 2.xml" />
     <None Include="Assets\LeapMotion\Core\Dependencies.txt" />
     <None Include="Assets\LeapMotion\Core\Shaders\ThresholdOverlay.shader" />
@@ -336,10 +342,12 @@
     <None Include="Assets\kits\HipHop World\HipHop World.xml" />
     <None Include="Assets\LeapMotion\Core\Shaders\PassthroughBackground.shader" />
     <None Include="Assets\UETools\Magic_Particle_Effects\Readme.txt" />
+    <None Include="Assets\Almgp_particle_vol_1\shaders\mesh_dissolve_particel.shader" />
     <None Include="Assets\LeapMotion\Core\Version.txt" />
     <None Include="Assets\kits\HipHop Acoustic\HipHop Acoustic.xml" />
     <None Include="Assets\LeapMotion\Core\Shaders\VertexOffsetShader.shader" />
     <None Include="Assets\kits\AnalogDub\AnalogDub.xml" />
+    <None Include="Assets\Almgp_particle_vol_1\shaders\face_power_particle.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/김진우/Desktop/Unity project/practice/launch pad/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
