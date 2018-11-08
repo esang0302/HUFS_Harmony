@@ -53,7 +53,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\allcontrol.cs" />
      <Compile Include="Assets\ClassicPiano.cs" />
      <Compile Include="Assets\ElectricPiano.cs" />
      <Compile Include="Assets\LeapMotion\Core\Examples\Example Assets\InertiaPostProcessProvider.cs" />
@@ -307,6 +306,7 @@
      <Compile Include="Assets\LeapMotion\Modules\InteractionEngine\Scripts\Utility\PhysicsCallbacks.cs" />
      <Compile Include="Assets\OrganPiano.cs" />
      <Compile Include="Assets\SoundByContact.cs" />
+     <Compile Include="Assets\SoundWithoutDaDa.cs" />
      <None Include="Assets\LeapMotion\Core\Resources\LeapCG.cginc" />
      <None Include="Assets\LeapMotion\Core\README_BEFORE_UPDATING.txt" />
      <None Include="Assets\LeapMotion\Core\readme.txt" />
