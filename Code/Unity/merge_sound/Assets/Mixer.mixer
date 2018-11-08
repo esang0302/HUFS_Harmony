@@ -21,11 +21,14 @@ AudioMixerController:
     name: track1Vol
   - guid: e008d85b930f9b843aa456371fc18c82
     name: track2Vol
+  - guid: 946616d48f376cd49bf554894f233fb9
+    name: track3Vol
   m_AudioMixerGroupViews:
   - guids:
     - 8b0fd30d1c0a6f0478b6f0a8e788a9d8
     - 421c84c1adef04a46b3649f53ac183ff
     - 3d5527bcd99cdf24f84d56ef6e86486b
+    - 7326e912c0d874d48b38bf7e0a77d2eb
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -40,6 +43,7 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: 243440234925393616}
   - {fileID: 243846034792569216}
+  - {fileID: 243090009271497072}
   m_Volume: 59dee7fa53978b34c95f2decc463fc95
   m_Pitch: 60ed6328f550d614bbb677c88e1667a8
   m_Effects:
@@ -74,6 +78,23 @@ AudioMixerSnapshotController:
     59dee7fa53978b34c95f2decc463fc95: -0.27209902
     e008d85b930f9b843aa456371fc18c82: -0.39762628
   m_TransitionOverrides: {}
+--- !u!243 &243090009271497072
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: track3
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 7326e912c0d874d48b38bf7e0a77d2eb
+  m_Children: []
+  m_Volume: 946616d48f376cd49bf554894f233fb9
+  m_Pitch: 7a8e2bd8e472bd94ba2186d738f02293
+  m_Effects:
+  - {fileID: 244967654790815232}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &243440234925393616
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -130,6 +151,19 @@ AudioMixerEffectController:
   m_EffectID: 183e848b0f9847c4cb838dd4c5a0a26e
   m_EffectName: Attenuation
   m_MixLevel: 2bfe5cb1b0516ef4ead4c16c01ca3727
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &244967654790815232
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: 679e56a4a2a89574bb1c4f2e0172ecec
+  m_EffectName: Attenuation
+  m_MixLevel: fe2c40a871f597940a2eb2843939fd2a
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0

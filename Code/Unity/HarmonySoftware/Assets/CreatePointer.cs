@@ -15,15 +15,17 @@ namespace Leap.Unity
         FingerModel finger;
         HandModel handModel;
         Vector3 TipPos;
+        GameObject cylinder;
         void Start()
         {
             //FingerDirectionDetector FDD = GameObject.Find("RigidRoundHand_L").GetComponent<FingerDirectionDetector>();
 
-            
             //Finger finger = HandModel.GetLeapHand().Fingers[1];
-            //GameObject cylinder = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+
+            GameObject cylinder = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+            cylinder.transform.position = new Vector3(100, 100, 100);
+
             //cylinder.transform.position = tipPosition;
-            //cylinder.transform.position = new Vector3(100, 100, 100);
             //cylinder.transform.localScale = new Vector3(100, 100, 100);
             /**handModel = GetComponent<HandModel>();
             leapHand = handModel.GetLeapHand();
@@ -36,12 +38,12 @@ namespace Leap.Unity
             cylinder.transform.localScale = new Vector3(100, 100, 100);
             */
 
-            }
+        }
 
         // Update is called once per frame
         void Update()
         {
-            
+
         }
 
         /**private int selectedFingerOrdinal()
