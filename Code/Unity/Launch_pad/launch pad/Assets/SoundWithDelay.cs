@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundWithDelay : MonoBehaviour
 {
-
+    public AudioClip play;
     AudioSource audioSource;
     Collision collider;
     float timeSpan;
@@ -16,7 +16,7 @@ public class SoundWithDelay : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         timeSpan = 0.2f;
-        checkTime = 0.5f; //2sec
+        checkTime = 0.3f; //2sec
     }
     private void Update()
     {
@@ -28,10 +28,10 @@ public class SoundWithDelay : MonoBehaviour
         {
             if (timeSpan >= checkTime)
             {
-                Debug.Log(timeSpan);
+                
                 audioSource.volume = collision.relativeVelocity.magnitude / 50;
-                audioSource.Play();
-                Debug.Log("Click!!");
+                audioSource.PlayOneShot(play,audioSource.volume);
+                Debug.Log("collision.relativeVelocity.magnitude: " + (collision.relativeVelocity.magnitude) / 100);
                 foreach (ContactPoint contact in collision.contacts)
                 {
                     GameObject particle = Instantiate(particles.gameObject, contact.point, Quaternion.LookRotation(contact.normal));

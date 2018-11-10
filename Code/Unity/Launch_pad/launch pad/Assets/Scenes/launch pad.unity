@@ -1115,16 +1115,16 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 87059811}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.05245663, y: -0, z: -0, w: 0.9986232}
+  m_LocalPosition: {x: 0, y: 0, z: 0.013096074}
   m_LocalScale: {x: 3.5, y: 0.5, z: 3.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.0140004, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4, y: 0.5}
+  m_AnchoredPosition: {x: -4, y: 0.4993121}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &87059816
@@ -1138,6 +1138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6bcc0a515809874eb559424510ab72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  play: {fileID: 8300000, guid: 5c5486bd7cf98ec4ab2e107d1a91fb16, type: 3}
   particles: {fileID: 19800000, guid: cb2e5f4fb1ae22b44b50284b455e7937, type: 2}
 --- !u!54 &87059817
 Rigidbody:
@@ -1396,16 +1397,16 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 247730451}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.05245663, y: -0, z: -0, w: 0.9986232}
+  m_LocalPosition: {x: 0, y: 0, z: 0.013096074}
   m_LocalScale: {x: 3.5, y: 0.5, z: 3.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.0140004, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: 0.5}
+  m_AnchoredPosition: {x: 4, y: 0.4993121}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &247730456
@@ -1419,6 +1420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6bcc0a515809874eb559424510ab72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  play: {fileID: 8300000, guid: eaafb4c42c6d3e84490ea253633c3bd6, type: 3}
   particles: {fileID: 19800000, guid: 36c00ed6632f3f94a99fcf8af5d7e67e, type: 2}
 --- !u!54 &247730457
 Rigidbody:
@@ -1688,16 +1690,16 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 783593960}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.05245663, y: -0, z: -0, w: 0.9986232}
+  m_LocalPosition: {x: 0, y: 0, z: 0.013096074}
   m_LocalScale: {x: 3.5, y: 0.5, z: 3.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.0140004, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.4993121}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &783593965
@@ -1711,6 +1713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6bcc0a515809874eb559424510ab72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  play: {fileID: 8300000, guid: b4d1294db81fb8b4cb87e2b5209473c9, type: 3}
   particles: {fileID: 19800000, guid: 70cfb32d33a912b4b9866eadfc19f713, type: 2}
 --- !u!54 &783593966
 Rigidbody:
@@ -3110,13 +3113,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1343440370}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.05245663, y: -0, z: -0, w: 0.9986232}
+  m_LocalPosition: {x: 0, y: 0.002063781, z: -0.03928822}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.0140004, y: 0, z: 0}
 --- !u!1001 &1353409576
 Prefab:
   m_ObjectHideFlags: 0
@@ -3259,16 +3262,16 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1386090578}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4}
+  m_LocalRotation: {x: 0.05245663, y: -0, z: -0, w: 0.9986232}
+  m_LocalPosition: {x: 0, y: 0, z: 3.9910824}
   m_LocalScale: {x: 3.5, y: 0.5, z: 3.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.0140004, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.080237746}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1386090583
@@ -3282,6 +3285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6bcc0a515809874eb559424510ab72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  play: {fileID: 8300000, guid: 8c2be87b7f55a03438c96433f323e323, type: 3}
   particles: {fileID: 19800000, guid: 4b6878c4bce14cc4eb25d7ab5c501437, type: 2}
 --- !u!54 &1386090584
 Rigidbody:
@@ -3474,16 +3478,16 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1428521472}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4}
+  m_LocalRotation: {x: 0.05245663, y: -0, z: -0, w: 0.9986232}
+  m_LocalPosition: {x: 0, y: 0, z: -3.9648902}
   m_LocalScale: {x: 3.5, y: 0.5, z: 3.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.0140004, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4, y: 0.5}
+  m_AnchoredPosition: {x: -4, y: 0.91838634}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1428521477
@@ -3497,6 +3501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6bcc0a515809874eb559424510ab72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  play: {fileID: 8300000, guid: 2ed53ba9f9fe2804daee8072acd13e45, type: 3}
   particles: {fileID: 19800000, guid: d9ee9f00c945d6043949d7cb06404623, type: 2}
 --- !u!54 &1428521478
 Rigidbody:
@@ -3689,16 +3694,16 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1911384324}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4}
+  m_LocalRotation: {x: 0.05245663, y: -0, z: -0, w: 0.9986232}
+  m_LocalPosition: {x: 0, y: 0, z: 3.9910824}
   m_LocalScale: {x: 3.5, y: 0.5, z: 3.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.0140004, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4, y: 0.5}
+  m_AnchoredPosition: {x: -4, y: 0.080237746}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1911384329
@@ -3807,6 +3812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6bcc0a515809874eb559424510ab72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  play: {fileID: 8300000, guid: dfd94701e562a7e45b6c5d24666b0692, type: 3}
   particles: {fileID: 19800000, guid: 5f6a743ad6471a94d98d9de0d21f8bdc, type: 2}
 --- !u!54 &1911384331
 Rigidbody:
@@ -3904,16 +3910,16 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1935307074}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4}
+  m_LocalRotation: {x: 0.05245663, y: -0, z: -0, w: 0.9986232}
+  m_LocalPosition: {x: 0, y: 0, z: -3.9648902}
   m_LocalScale: {x: 3.5, y: 0.5, z: 3.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.0140004, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: 0.5}
+  m_AnchoredPosition: {x: 4, y: 0.91838634}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1935307079
@@ -3927,6 +3933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6bcc0a515809874eb559424510ab72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  play: {fileID: 8300000, guid: 21281ce49d9d879498c82df7237b4427, type: 3}
   particles: {fileID: 19800000, guid: d9ee9f00c945d6043949d7cb06404623, type: 2}
 --- !u!54 &1935307080
 Rigidbody:
@@ -4119,16 +4126,16 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2088553031}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4}
+  m_LocalRotation: {x: 0.05245663, y: -0, z: -0, w: 0.9986232}
+  m_LocalPosition: {x: 0, y: 0, z: 3.9910824}
   m_LocalScale: {x: 3.5, y: 0.5, z: 3.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.0140004, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: 0.5}
+  m_AnchoredPosition: {x: 4, y: 0.080237746}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2088553036
@@ -4142,6 +4149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6bcc0a515809874eb559424510ab72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  play: {fileID: 8300000, guid: c5bd7c6817ca560448d608ef7c49c09c, type: 3}
   particles: {fileID: 19800000, guid: d0160fa8785a9bf4fa11929ecda43d44, type: 2}
 --- !u!54 &2088553037
 Rigidbody:
@@ -4334,16 +4342,16 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2119872171}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4}
+  m_LocalRotation: {x: 0.05245663, y: -0, z: -0, w: 0.9986232}
+  m_LocalPosition: {x: 0, y: 0, z: -3.9648902}
   m_LocalScale: {x: 3.5, y: 0.5, z: 3.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.0140004, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.91838634}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2119872176
@@ -4357,6 +4365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6bcc0a515809874eb559424510ab72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  play: {fileID: 8300000, guid: 8ff660f3c4a1a1848bbe8e4cf3cc1a5e, type: 3}
   particles: {fileID: 19800000, guid: d9ee9f00c945d6043949d7cb06404623, type: 2}
 --- !u!54 &2119872177
 Rigidbody:

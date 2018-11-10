@@ -17,7 +17,7 @@ public class velocity : MonoBehaviour {
         {
             audioSource.volume = collision.relativeVelocity.magnitude/50;
             audioSource.Play();
-            Debug.Log("collision.relativeVelocity.magnitude: " + collision.relativeVelocity.magnitude/100);
+            Debug.Log("collision.relativeVelocity.magnitude: " + collision.relativeVelocity.magnitude/50);
         }
     }
     // Update is called once per frame
