@@ -23,7 +23,7 @@ namespace Leap.Unity {
     private static int _leftColorIndex = 0;
     private static int _rightColorIndex = 0;
     private static Color[] _leftColorList = { new Color(0.0f, 0.0f, 1.0f), new Color(0.2f, 0.0f, 0.4f), new Color(0.0f, 0.2f, 0.2f) };
-    private static Color[] _rightColorList = { new Color(1.0f, 0.0f, 0.0f), new Color(1.0f, 1.0f, 0.0f), new Color(1.0f, 0.5f, 0.0f) };
+    private static Color[] _rightColorList = { new Color(.0f, 0.0f, 0.0f), new Color(1.0f, 1.0f, 0.0f), new Color(1.0f, 0.5f, 0.0f) };
 
     [SerializeField]
     private Chirality handedness;
@@ -98,13 +98,12 @@ namespace Leap.Unity {
 
     public override void BeginHand() {
       base.BeginHand();
-
+      Color a = Color.blue;
+      a.a = 0f;
       if (_hand.IsLeft) {
-        _sphereMat.color = _leftColorList[_leftColorIndex];
-        _leftColorIndex = (_leftColorIndex + 1) % _leftColorList.Length;
+                _sphereMat.color = a;
       } else {
-        _sphereMat.color = _rightColorList[_rightColorIndex];
-        _rightColorIndex = (_rightColorIndex + 1) % _rightColorList.Length;
+                _sphereMat.color = a;
       }
     }
 
