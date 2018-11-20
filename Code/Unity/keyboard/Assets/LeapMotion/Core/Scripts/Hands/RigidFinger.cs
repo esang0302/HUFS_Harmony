@@ -30,13 +30,15 @@ namespace Leap.Unity{
         if (bones[i] != null) {
           // Set bone dimensions.
           CapsuleCollider capsule = bones[i].GetComponent<CapsuleCollider>();
+          if (i == 0)
+            //bones[i].tag = "tip";
           if (capsule != null) {
             // Initialization
             capsule.direction = 2;
-            bones[i].localScale = new Vector3(1f/transform.lossyScale.x, 1f/transform.lossyScale.y, 1f/transform.lossyScale.z);
+            bones[i].localScale = new Vector3(0.01f/transform.lossyScale.x, 0.001f/transform.lossyScale.y, 0.001f/transform.lossyScale.z);
   
             // Update
-            capsule.radius = GetBoneWidth(i) / 2f;
+            capsule.radius = GetBoneWidth(i) / 1000f;
             capsule.height = GetBoneLength(i) + GetBoneWidth(i);
           }
   

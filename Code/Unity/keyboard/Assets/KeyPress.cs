@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KeyPress : MonoBehaviour {
     public float MaxZRotation = 6.0f;
-    public float ZRotationResetVelocity = -8;
+    public float ZRotationResetVelocity = -6;
    public float ResetPlayTime = 0.5f;
 
     private float currentResetPlayTime = 0;
@@ -25,9 +25,11 @@ public class KeyPress : MonoBehaviour {
     // Update is called once per frame
    void Update () {
         //return to origin state of piano
+        
         if (transform.rotation.eulerAngles.z > 0.1f)
         {
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, Time.deltaTime * ZRotationResetVelocity));
+            //transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0);
             GetComponent<Rigidbody>().angularDrag = 0;
             GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             Debug.Log(transform.rotation.eulerAngles.z);
@@ -57,20 +59,33 @@ public class KeyPress : MonoBehaviour {
     }
     void OnCollisionEnter(Collision collision)
     {
-        pushingTime += Time.deltaTime;
+        
 
         if (currentResetPlayTime >= ResetPlayTime)
             {
                 currentResetPlayTime = 0.0f;
             }
         //play sound when eulerAngles.z > 1.5
-        if (transform.rotation.eulerAngles.z > 1.5f)
+        if (transform.rotation.eulerAngles.z > 1.2f)
         {
-            pushingPower = (transform.rotation.eulerAngles.z) / pushingTime;
             audio.PlayOneShot(clip, 1f);
         }
+        pushingTime += Time.deltaTime;
+        
             
         
+        
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (transform.rotation.eulerAngles.z > 0.1f)
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, Time.deltaTime * ZRotationResetVelocity));
+            //transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0);
+            GetComponent<Rigidbody>().angularDrag = 0;
+            GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            Debug.Log(transform.rotation.eulerAngles.z);
+        }
     }
 
 }
