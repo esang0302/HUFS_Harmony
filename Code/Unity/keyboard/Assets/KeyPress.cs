@@ -8,31 +8,33 @@ public class KeyPress : MonoBehaviour {
    public float ResetPlayTime = 0.5f;
 
     private float currentResetPlayTime = 0;
-    private float pushingTime = 0;
-    private float pushingPower = 0;
     private Vector3 initialPosition;
+    private float t;
     AudioSource audio;
     AudioClip clip;
-
-    void Start () {
+    private void Awake()
+    {
         Physics.IgnoreLayerCollision(LayerMask.NameToLayer("piano"), LayerMask.NameToLayer("piano"), true);
+    }
+    void Start () {
+       
         initialPosition = transform.position;
         currentResetPlayTime = ResetPlayTime;
         audio = gameObject.GetComponent<AudioSource>();
         clip = audio.clip;
+        
     }
 
     // Update is called once per frame
    void Update () {
         //return to origin state of piano
-        
-        if (transform.rotation.eulerAngles.z > 0.1f)
-        {
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, Time.deltaTime * ZRotationResetVelocity));
+        t = Time.deltaTime;
+        if (transform.rotation.eulerAngles.z > 0.3f)
+        { 
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, t * (-9)));
             //transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0);
             GetComponent<Rigidbody>().angularDrag = 0;
             GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-            Debug.Log(transform.rotation.eulerAngles.z);
         }
         //Can't over the limit of pressing 
         if (transform.rotation.eulerAngles.z > MaxZRotation)
@@ -59,33 +61,20 @@ public class KeyPress : MonoBehaviour {
     }
     void OnCollisionEnter(Collision collision)
     {
-        
-
-        if (currentResetPlayTime >= ResetPlayTime)
+        if (GetComponent<Collider>().bounds.max.x > collision.contacts[0].point.x && GetComponent<Collider>().bounds.min.x < collision.contacts[0].point.x
+            && GetComponent<Collider>().bounds.min.y < collision.contacts[0].point.y)
+        {
+            if (currentResetPlayTime >= ResetPlayTime)
             {
                 currentResetPlayTime = 0.0f;
             }
-        //play sound when eulerAngles.z > 1.5
-        if (transform.rotation.eulerAngles.z > 1.2f)
-        {
-            audio.PlayOneShot(clip, 1f);
+            //play sound when eulerAngles.z > 1.5
+            if (transform.rotation.eulerAngles.z > 1f)
+            {
+                audio.PlayOneShot(clip, 1f);
+            }
         }
-        pushingTime += Time.deltaTime;
-        
-            
-        
-        
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (transform.rotation.eulerAngles.z > 0.1f)
-        {
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, Time.deltaTime * ZRotationResetVelocity));
-            //transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0);
-            GetComponent<Rigidbody>().angularDrag = 0;
-            GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-            Debug.Log(transform.rotation.eulerAngles.z);
-        }
+        //transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, MaxZRotation);
     }
 
 }

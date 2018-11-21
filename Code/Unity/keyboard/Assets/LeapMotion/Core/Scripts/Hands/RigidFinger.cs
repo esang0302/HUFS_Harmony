@@ -24,26 +24,26 @@ namespace Leap.Unity{
         }
       }
     }
-  
-    public override void UpdateFinger() {
+        public override void UpdateFinger() {
       for (int i = 0; i < bones.Length; ++i) {
         if (bones[i] != null) {
           // Set bone dimensions.
           CapsuleCollider capsule = bones[i].GetComponent<CapsuleCollider>();
-          if (i == 0)
-            //bones[i].tag = "tip";
           if (capsule != null) {
             // Initialization
             capsule.direction = 2;
-            bones[i].localScale = new Vector3(0.01f/transform.lossyScale.x, 0.001f/transform.lossyScale.y, 0.001f/transform.lossyScale.z);
-  
-            // Update
-            capsule.radius = GetBoneWidth(i) / 1000f;
-            capsule.height = GetBoneLength(i) + GetBoneWidth(i);
+            bones[i].localScale = new Vector3(0.5f/transform.lossyScale.x, 0.5f / transform.lossyScale.y, 0.5f / transform.lossyScale.z);
+
+                        // Update
+                        bones[i].position = GetBoneCenter(i);
+                        //capsule.transform.rotation = bone.Rotation.ToQuaternion();
+                        capsule.radius = GetBoneWidth(i) / 2f;
+            capsule.height = GetBoneLength(i) + 5*GetBoneWidth(i);
           }
   
           Rigidbody boneBody = bones[i].GetComponent<Rigidbody>();
           if (boneBody) {
+                        //Debug.Log(GetBoneCenter(i));
             boneBody.MovePosition(GetBoneCenter(i));
             boneBody.MoveRotation(GetBoneRotation(i));
           } else {

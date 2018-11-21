@@ -813,7 +813,7 @@ namespace Leap.Unity.Interaction {
       // Check any Joint attachments to automatically be able to choose Kabsch pivot
       // setting (grasping).
       RefreshPositionLockedState();
-    }
+        }
 
     #endregion
 
