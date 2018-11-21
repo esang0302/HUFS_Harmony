@@ -99,12 +99,12 @@ namespace Leap.Unity {
     public override void BeginHand() {
       base.BeginHand();
 
+      Color a = Color.blue;
+      a.a = 0f;
       if (_hand.IsLeft) {
-        _sphereMat.color = _leftColorList[_leftColorIndex];
-        _leftColorIndex = (_leftColorIndex + 1) % _leftColorList.Length;
+                _sphereMat.color = a;
       } else {
-        _sphereMat.color = _rightColorList[_rightColorIndex];
-        _rightColorIndex = (_rightColorIndex + 1) % _rightColorList.Length;
+                _sphereMat.color = a;
       }
     }
 

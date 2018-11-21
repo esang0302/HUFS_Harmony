@@ -22,6 +22,15 @@ public class SoundWithDelay : MonoBehaviour
     {
         timeSpan += Time.deltaTime;
     }
+    private void OnMouseDown()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log(gameObject.name);
+            GameObject.Find("Main Camera").GetComponent<TextFileFinder>().fileBrowserOpen(gameObject.name);
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("target"))
@@ -30,7 +39,9 @@ public class SoundWithDelay : MonoBehaviour
             {
                 
                 audioSource.volume = collision.relativeVelocity.magnitude / 50;
-                audioSource.PlayOneShot(play,audioSource.volume);
+                Debug.Log(collision.relativeVelocity.magnitude);
+                audioSource.PlayOneShot(audioSource.clip,audioSource.volume);
+                //audioSource.PlayOneShot(play, 1);
                 Debug.Log("collision.relativeVelocity.magnitude: " + (collision.relativeVelocity.magnitude) / 100);
                 foreach (ContactPoint contact in collision.contacts)
                 {
