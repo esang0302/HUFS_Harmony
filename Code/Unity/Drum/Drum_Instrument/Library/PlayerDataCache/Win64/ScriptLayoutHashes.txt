@@ -1,8 +1,8 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/김진우/Desktop/Unity project/practice/Drum/vuild/Drum.exe
+C:/Users/김진우/Desktop/test/Drum.exe
 SceneListBegin?
-Assets/LeapMotion/Core/Examples/Capsule Hands (Desktop).unity
+Assets/test.unity
 SceneListEnd?
 c422dd62785a6d0afa870fbd111886ce Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
 352ceeffc4a43f35bd645322460cd748 Assembly-CSharp.dll:Leap.Unity.Interaction.InteractionBehaviour
@@ -121,6 +121,7 @@ c7dd12c15208b0447e101f80038706df UnityEngine.Timeline.dll:UnityEngine.Timeline.A
 fe1aad941ce8ddb26f3373c7400d52e8 Assembly-CSharp.dll:Leap.Unity.Examples.TransformHandle
 66b3109aa5921cf800bec17926c6adba Unity.TextMeshPro.dll:TMPro.TMP_SubMeshUI
 59da547a897b7254b39c8046c219e1ac Assembly-CSharp.dll:Leap.Unity.PalmDirectionDetector
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:Leap.Unity.scale_R
 5ddb336dda7738d2f93bd844dbb19615 Assembly-CSharp.dll:Leap.Unity.Examples.WorkstationBehaviourExample
 20a5b9749095fbc8cdd732c57175ed70 Assembly-CSharp.dll:Leap.Unity.Examples.SimpleMatchAnchorScaleAndState
 201273fb4f889724fb090164b7d6c657 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
@@ -145,7 +146,7 @@ d8e188c54043c34be637cb56853637fb Assembly-CSharp.dll:.CycleHandPairs
 edaaf79d7b546dc860b44729b6320142 Assembly-CSharp.dll:Leap.Unity.Interaction.InteractionManager
 90108bea429573a69d7567182ad596c7 Assembly-CSharp.dll:Leap.Unity.Interaction.AnchorGroup
 dc6e1319a8cb20caa93899ce3d897263 Assembly-CSharp.dll:Leap.Unity.Attachments.AttachmentPointBehaviour
-da3df9a7149d0d6d819eaff803e61e61 Assembly-CSharp.dll:.sound
+50fa2bc4ecf49738668ea61a7dd4312b Assembly-CSharp.dll:.sound
 382b8ef512fa8d6108723a01b57af65b UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
 d22c788799ee45d8676254eccf20e8b8 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
 f74188fa6266341de48ee7d0b2aaccf2 Assembly-CSharp.dll:Leap.Unity.Examples.SimpleAnchorFeedback
@@ -172,6 +173,7 @@ f16835701e71dd5d6fb1fed4b7aff1d8 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 e72177fd77265dfeaf19d79af3679f0a Assembly-CSharp.dll:Leap.Unity.RigidHand
 53fd4b3508403de0267c29cd09f8569d Assembly-CSharp.dll:Leap.Unity.Interaction.InteractionHand
 c1f7ef724bdfbd6cbcd7bf8086b4d317 Assembly-CSharp.dll:Leap.Unity.LeapHandsAutoRig
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:Leap.Unity.scale_L
 2775c069d3bf01886532bb3e57d343f7 Assembly-CSharp.dll:Leap.Unity.KeyEnableGameObjects
 1bd4b9ca955e76278e01c919bf1db546 Assembly-CSharp.dll:Leap.Unity.LeapEyeDislocator
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:Leap.Unity.Interaction.PhysicsCallbacks

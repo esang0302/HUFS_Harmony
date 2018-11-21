@@ -312,7 +312,8 @@
     <Compile Include="Assets\LeapMotion\Modules\InteractionEngine\Scripts\Utility\PhysicsCallbacks.cs" />
     <Compile Include="Assets\scale_L.cs" />
     <Compile Include="Assets\scale_R.cs" />
-    <Compile Include="Assets\sound.cs" />
+    <Compile Include="Assets\sound_L.cs" />
+    <Compile Include="Assets\sound_R.cs" />
     <Compile Include="Assets\UETools\Magic_Particle_Effects\Scripts\CameraMovement.cs" />
     <None Include="Assets\LeapMotion\Core\Resources\LeapCG.cginc" />
     <None Include="Assets\LeapMotion\Core\README_BEFORE_UPDATING.txt" />

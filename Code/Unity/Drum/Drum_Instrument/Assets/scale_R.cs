@@ -11,7 +11,10 @@ namespace Leap.Unity{
         void Start()
         {
             Physics.IgnoreLayerCollision(LayerMask.NameToLayer("hand"), LayerMask.NameToLayer("drum"), true);
-            transform.rotation = Quaternion.Euler(90, 0, 90);
+            Physics.IgnoreLayerCollision(LayerMask.NameToLayer("hand"), LayerMask.NameToLayer("stick1"), true);
+            Physics.IgnoreLayerCollision(LayerMask.NameToLayer("hand"), LayerMask.NameToLayer("stick2"), true);
+            Physics.IgnoreLayerCollision(LayerMask.NameToLayer("stick2"), LayerMask.NameToLayer("stick1"), true);
+            transform.rotation = Quaternion.Euler(90,0,90);
         }
         public void scaleUp()
         {
