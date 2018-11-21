@@ -1,4 +1,6 @@
 <img src="./image/harmony.jpg">
+ 
+## LeapMotion을 이용한 가상악기 연주 및 음악 창작 공유 플랫폼 (Harmony)
 
 # 프로젝트 소개
 
