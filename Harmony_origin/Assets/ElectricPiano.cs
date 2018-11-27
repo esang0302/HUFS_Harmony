@@ -97,7 +97,7 @@ public class ElectricPiano : MonoBehaviour
         objects = new GameObject[] {object1C, object1Csp, object1D, object1Dsp, object1E, object1F, object1Fsp, object1G, object1Gsp, object1A, object1Asp, object1B, 
             object2C, object2Csp, object2D, object2Dsp, object2E, object2F, object2Fsp, object2G, object2Gsp, object2A, object2Asp, object2B, 
             object3C, object3Csp, object3D, object3Dsp, object3E, object3F, object3Fsp, object3G, object3Gsp, object3A, object3Asp, object3B};
-    }
+    } 
     void OnCollisionEnter(Collision collision)
     {
 
