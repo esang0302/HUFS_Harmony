@@ -6,7 +6,7 @@ public class TextFileFinder_launch : MonoBehaviour
     protected string m_textPath;
     AudioSource source;
 
-    protected FileBrowser m_fileBrowser1;
+    protected FileBrowser_launch m_fileBrowser1;
 
     [SerializeField]
     protected Texture2D m_directoryImage,
@@ -29,7 +29,7 @@ public class TextFileFinder_launch : MonoBehaviour
     public void fileBrowserOpen(string Padname)
     {
         source = GameObject.Find(Padname).GetComponent<AudioSource>();
-        m_fileBrowser1 = new FileBrowser(
+        m_fileBrowser1 = new FileBrowser_launch(
                 new Rect(10, 100, 600, 300),
                 "Choose Audio File",
                 FileSelectedCallback
@@ -46,7 +46,7 @@ public class TextFileFinder_launch : MonoBehaviour
         GUILayout.Label(Path.GetFileName(m_textPath) ?? "none selected");
         if (GUILayout.Button("", GUILayout.ExpandWidth(false)))
         {
-            m_fileBrowser1 = new FileBrowser(
+            m_fileBrowser1 = new FileBrowser_launch(
                 new Rect(10, 100, 0, 0),
                 "Choose Audio File",
                 FileSelectedCallback
@@ -61,7 +61,7 @@ public class TextFileFinder_launch : MonoBehaviour
 
         if (GUILayout.Button("", GUILayout.ExpandWidth(false)))
         {
-            m_fileBrowser1 = new FileBrowser(
+            m_fileBrowser1 = new FileBrowser_launch(
                 new Rect(10, 100, 0, 0),
                 "Choose Audio File",
                 FileSelectedCallback

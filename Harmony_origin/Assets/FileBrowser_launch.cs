@@ -144,8 +144,8 @@ public class FileBrowser_launch
         m_callback = callback;
         //SetNewDirectory(Application.dataPath+"/Music");
         Debug.Log(Directory.GetCurrentDirectory() + "\\Assets\\resources\\");
-        //SetNewDirectory(Directory.GetCurrentDirectory()+ "\\Assets\\resources\\"); // unity환경에서의 디렉토리 정하기
-        SetNewDirectory(Directory.GetCurrentDirectory() + "\\Harmony_Data\\Resources\\padSounds\\"); // build환경에서의 디렉토리 정하기  >>player settings에서 product name >> Harmony
+        SetNewDirectory(Directory.GetCurrentDirectory()+ "\\Assets\\resources\\padSounds\\"); // unity환경에서의 디렉토리 정하기
+        //SetNewDirectory(Directory.GetCurrentDirectory() + "\\Harmony_Data\\Resources\\padSounds\\"); // build환경에서의 디렉토리 정하기  >>player settings에서 product name >> Harmony
         //SetNewDirectory(Directory.GetCurrentDirectory() + "\\Assets\\resources\\padSounds\\");
         SwitchDirectoryNow();
 

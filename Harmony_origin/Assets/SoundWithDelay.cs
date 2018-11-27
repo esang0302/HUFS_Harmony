@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoundWithDelay : MonoBehaviour
 {
@@ -9,11 +10,15 @@ public class SoundWithDelay : MonoBehaviour
     Collision collider;
     float timeSpan;
     float checkTime;
-    public ParticleSystem particles;
+    Renderer rend;
+   
+    //public ParticleSystem particles;
 
     // Use this for initialization
     void Start()
     {
+        rend= GetComponent<Renderer>();
+        
         audioSource = GetComponent<AudioSource>();
         timeSpan = 0.2f;
         checkTime = 0.3f; //2sec
@@ -35,20 +40,22 @@ public class SoundWithDelay : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("target"))
         {
+            
             if (timeSpan >= checkTime)
             {
                 
                 audioSource.volume = collision.relativeVelocity.magnitude / 50;
                 Debug.Log(collision.relativeVelocity.magnitude);
                 audioSource.PlayOneShot(audioSource.clip,audioSource.volume);
+                rend.material.SetColor("_Color", Random.ColorHSV());
                 //audioSource.PlayOneShot(play, 1);
                 Debug.Log("collision.relativeVelocity.magnitude: " + (collision.relativeVelocity.magnitude) / 100);
-                foreach (ContactPoint contact in collision.contacts)
+                /*foreach (ContactPoint contact in collision.contacts)
                 {
                     GameObject particle = Instantiate(particles.gameObject, contact.point, Quaternion.LookRotation(contact.normal));
                     Destroy(particle, 1);
                 }
-
+                */
             }
 
             timeSpan = 0.1f;
