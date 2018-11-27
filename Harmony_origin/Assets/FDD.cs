@@ -137,7 +137,7 @@ namespace Leap.Unity
             cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
             cube.GetComponent<MeshRenderer>().material.color = Color.red;
             cube.tag = "cursor";
-            cube.transform.localScale = new Vector3(5, 5, 2);
+            cube.transform.localScale = new Vector3(10, 10, 2);
         }
 
         private void OnEnable()

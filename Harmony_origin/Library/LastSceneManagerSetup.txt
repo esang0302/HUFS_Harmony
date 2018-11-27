@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/MERGE/Launchpad.unity
+- path: Assets/MERGE/2Login.unity
   isLoaded: 1
   isActive: 1
