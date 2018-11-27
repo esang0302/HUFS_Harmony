@@ -1370,8 +1370,9 @@ namespace Leap.Unity.Interaction {
         }
 
         if (_accumulatedAngularAcceleration != Vector3.zero) {
-          rigidbody.angularVelocity += _accumulatedAngularAcceleration * Time.fixedDeltaTime;
-        }
+                    rigidbody.angularVelocity += _accumulatedAngularAcceleration * Time.fixedDeltaTime;
+               
+                }
 
         //Reset so we can accumulate for the next frame
         _accumulatedLinearAcceleration = Vector3.zero;

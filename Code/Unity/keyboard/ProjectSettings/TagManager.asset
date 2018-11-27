@@ -6,6 +6,7 @@ TagManager:
   tags:
   - tip
   - sdf
+  - target
   layers:
   - Default
   - TransparentFX
