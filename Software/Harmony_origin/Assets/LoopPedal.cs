@@ -35,7 +35,7 @@ public class LoopPedal : MonoBehaviour
     public int baudRate = 9600;
 
     [Tooltip("Timeout")]
-    public int ReadTimeout = 1000;
+    public int ReadTimeout = 500;
 
     [Tooltip("QueueLenght")]
     public int QueueLenght = 50;

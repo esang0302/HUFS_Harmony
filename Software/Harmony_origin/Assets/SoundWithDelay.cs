@@ -11,14 +11,15 @@ public class SoundWithDelay : MonoBehaviour
     float timeSpan;
     float checkTime;
     Renderer rend;
-   
+    Material color;
+
     //public ParticleSystem particles;
 
     // Use this for initialization
     void Start()
     {
-        rend= GetComponent<Renderer>();
-        
+        rend = GetComponent<Renderer>();
+
         audioSource = GetComponent<AudioSource>();
         timeSpan = 0.2f;
         checkTime = 0.3f; //2sec
@@ -40,13 +41,13 @@ public class SoundWithDelay : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("target"))
         {
-            
+
             if (timeSpan >= checkTime)
             {
-                
+
                 audioSource.volume = collision.relativeVelocity.magnitude / 50;
                 Debug.Log(collision.relativeVelocity.magnitude);
-                audioSource.PlayOneShot(audioSource.clip,audioSource.volume);
+                audioSource.PlayOneShot(audioSource.clip, audioSource.volume);
                 rend.material.SetColor("_Color", Random.ColorHSV());
                 //audioSource.PlayOneShot(play, 1);
                 Debug.Log("collision.relativeVelocity.magnitude: " + (collision.relativeVelocity.magnitude) / 100);
@@ -64,5 +65,9 @@ public class SoundWithDelay : MonoBehaviour
         }
 
     }
-
+    private void OnCollisionExit(Collision collision)
+    {
+        //color = Resources.Load("button_mat2.mat", typeof(Material)) as Material;
+       // gameObject.GetComponent<Renderer>().material.color = new Color(206, 238, 235, 150);
+    }
 }
