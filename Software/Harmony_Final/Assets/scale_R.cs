@@ -7,14 +7,14 @@ namespace Leap.Unity{
     {
         //public GameObject objectToBig;
         // Use this for initialization
-        HandModelBase handModel;
+        public HandModelBase handModel = null;
         void Start()
         {
             Physics.IgnoreLayerCollision(LayerMask.NameToLayer("hand"), LayerMask.NameToLayer("drum"), true);
             Physics.IgnoreLayerCollision(LayerMask.NameToLayer("hand"), LayerMask.NameToLayer("stick1"), true);
             Physics.IgnoreLayerCollision(LayerMask.NameToLayer("hand"), LayerMask.NameToLayer("stick2"), true);
             Physics.IgnoreLayerCollision(LayerMask.NameToLayer("stick2"), LayerMask.NameToLayer("stick1"), true);
-            transform.rotation = Quaternion.Euler(90,0,90);
+            
         }
         public void scaleUp()
         {
@@ -25,7 +25,8 @@ namespace Leap.Unity{
         public void scaleDown()
         {
             transform.localScale = new Vector3(0.001f, 0.001f, 0.001f);
-            handModel = GameObject.Find("RigidRoundHand_R").GetComponent<ExtendedFingerDetector>().HandModel;
+            transform.rotation = Quaternion.Euler(90, 30, 90);
+            //handModel = GameObject.Find("RigidRoundHand_R").GetComponent<ExtendedFingerDetector>().HandModel;
             if (handModel != null)
                 transform.position = handModel.GetLeapHand().PalmPosition.ToVector3();
 

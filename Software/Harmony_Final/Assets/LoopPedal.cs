@@ -23,13 +23,15 @@ public class LoopPedal : MonoBehaviour
     string sensor = "";
     int val;
     int loop = -1;
+    float timeSpan;
+    float checkTime;
 
     string instrument = "3";
 
     wrmhl myDevice = new wrmhl(); // wrmhl is the bridge beetwen your computer and hardware.
 
     [Tooltip("SerialPort of your device.")]
-    public string portName = "COM6";
+    public string portName = "COM3";
 
     [Tooltip("Baudrate")]
     public int baudRate = 9600;
@@ -46,19 +48,36 @@ public class LoopPedal : MonoBehaviour
                                                                     // Serial Port, Baud Rates, Read Timeout and QueueLenght.
         myDevice.connect(); // This method open the Serial communication with the vars previously given.
         myDevice.send(instrument); // Send data to the device using thread.
-
+        timeSpan = 0.0f;
+        checkTime = 0.5f; //2sec
     }
 
     // Update is called once per frame
     void Update()
     {
+        timeSpan += Time.deltaTime;
+
         sensor = myDevice.readQueue(); // 아두이노로부터 data 받아옴(string)
         val = Convert.ToInt32(sensor);
-        if (val > 20)
+        if (val > 5)
         {
-            Debug.Log("Loop Start!");
-            loop = loop * -1;
-            GameObject.Find("Main Camera").GetComponent<LoopStation>().LoopStart();
+            if (timeSpan >= checkTime)
+            {
+                Debug.Log("Loop Start!");
+                loop = loop * -1;
+                GameObject.Find("Main Camera").GetComponent<LoopStation>().LoopStart();
+                timeSpan = 0.0f;
+            }
         }
+    }
+    public void disconnection()
+    {
+        myDevice.close();
+
+    }
+    void OnApplicationQuit()
+    { // close the Thread and Serial Port
+        myDevice.close();
+
     }
 }

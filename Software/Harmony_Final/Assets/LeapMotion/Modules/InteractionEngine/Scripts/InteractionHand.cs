@@ -451,7 +451,7 @@ namespace Leap.Unity.Interaction {
 
           CapsuleCollider capsule = contactBoneObj.GetComponent<CapsuleCollider>();
           capsule.direction = 2;
-                    capsule.radius = 0.005f;
+          capsule.radius = bone.Width * 0.5f;
           capsule.height = bone.Length + bone.Width;
           capsule.material = defaultContactBoneMaterial;
 

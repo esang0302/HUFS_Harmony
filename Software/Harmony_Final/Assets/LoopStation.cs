@@ -18,10 +18,13 @@ public class LoopStation : MonoBehaviour
     // the audio stream instance
     private MemoryStream outputStream;
     private BinaryWriter outputWriter;
-    int click = -1;
+    public int click = -1;
+    int count = 0;
+
     AudioSource audio;
     AudioClip loadedClip;
     string date;
+    string loopfile;
     // should this object be rendering to the output stream?
     public bool Rendering = false;
 
@@ -109,23 +112,25 @@ public class LoopStation : MonoBehaviour
     public void LoopStart()
     {
         click = click * -1;
-        if (click > 0)
+        if (click > 0 && count == 0)
         {
             Rendering = true;
+            loopfile = DateTime.Now.ToString("yyyy-MM-dd-HH-mm");
         }
         else if (click < 0)
         {
             Rendering = false;
-            Save(Directory.GetCurrentDirectory() + "\\Assets\\resources\\loop.wav");             //unity
+            //Save(Directory.GetCurrentDirectory() + "\\Assets\\resources\\"+ loopfile + " loop.wav");             //unity
+            Save(Directory.GetCurrentDirectory() + "\\Harmony_Data\\resources\\"+ loopfile + " loop.wav");     //build
             Clear();
-            //Save(Directory.GetCurrentDirectory() + "\\Harmony_Data\\resources\\looooop.wav");     //build
             StartCoroutine(loadAudio());
 
         }
     }
     public IEnumerator loadAudio()
     {
-        WWW audio_loader = new WWW("file:///" + "\\Assets\\resources\\loop.wav");
+        //WWW audio_loader = new WWW("file:///" + "\\Assets\\resources\\" + loopfile + " loop.wav");   //unity
+        WWW audio_loader = new WWW("file:///" + "\\Harmony_Data\\resources\\" + loopfile + " loop.wav");    //build
         while (!audio_loader.isDone)
             Debug.Log(audio_loader.progress);
         yield return audio_loader;
@@ -142,8 +147,9 @@ public class LoopStation : MonoBehaviour
     {
         date = DateTime.Now.ToString("yyyy-MM-dd-HH-mm");
         Rendering = false;
-        Save(Directory.GetCurrentDirectory() + "\\Assets\\resources\\LoopMusic" + date + ".wav");
-
+        //Save(Directory.GetCurrentDirectory() + "\\Assets\\resources\\LoopMusic" + date + ".wav");     //unity
+        Save(Directory.GetCurrentDirectory() + "\\Harmony_Data\\resources\\" + date + ".wav");          //build
+        count = 0;
     }
 
 

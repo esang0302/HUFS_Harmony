@@ -17,6 +17,8 @@ public class SoundWithDelay : MonoBehaviour
     Color color;
     float intensity;
     private Material _material;
+    public GameObject Lights;
+    
     //public ParticleSystem particles;
 
     // Use this for initialization
@@ -53,6 +55,7 @@ public class SoundWithDelay : MonoBehaviour
             rend.material.SetColor("_EmissionColor", new Color(0.6941973f, 3.692549f, 3.773585f));
             rend.material.SetFloat("_EmissionScaleUI", intensity);
             colortimeSpan = 0.0f;
+            Lights.SetActive(false);
         }
     }
     private void OnMouseDown()
@@ -72,6 +75,7 @@ public class SoundWithDelay : MonoBehaviour
 
         // Turn on emission
         //_material.EnableKeyword("_EMISSION");
+        Lights.SetActive(true);
         colortimeSpan = 0.0f;
         _material.EnableKeyword("_EMISSION");
         rend.material.SetColor("_EmissionColor", new Color(0, 9.082055f, 16));
@@ -83,7 +87,7 @@ public class SoundWithDelay : MonoBehaviour
             if (timeSpan >= checkTime)
             {
 
-                audioSource.volume = collision.relativeVelocity.magnitude / 50;
+                audioSource.volume = collision.relativeVelocity.magnitude / 20;
                 Debug.Log(collision.relativeVelocity.magnitude);
                 audioSource.PlayOneShot(audioSource.clip, audioSource.volume);
                 // Turn on emission

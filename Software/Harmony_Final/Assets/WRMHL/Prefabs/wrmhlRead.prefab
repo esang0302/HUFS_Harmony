@@ -51,7 +51,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f53c1c022d6264eb7a8aa68c9871d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portName: COM6
-  baudRate: 250000
-  ReadTimeout: 20
-  QueueLenght: 1

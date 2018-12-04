@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{26CDE4C4-FDF6-E795-D63B-F26B9B383D63}</ProjectGuid>
+    <ProjectGuid>{55FCEF7B-753E-4291-CEEF-2CDB264A902F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -65,20 +65,24 @@
     <Compile Include="Assets\ActivateButton.cs" />
     <Compile Include="Assets\ActivateButton2.cs" />
     <Compile Include="Assets\ActivateButton3.cs" />
+    <Compile Include="Assets\arduinoDisconnect.cs" />
     <Compile Include="Assets\audio.cs" />
     <Compile Include="Assets\audioclips.cs" />
     <Compile Include="Assets\AudioObjectCameraMatcher.cs" />
     <Compile Include="Assets\AudioRenderer.cs" />
     <Compile Include="Assets\AudioWaveFormVisualizerXXX.cs" />
+    <Compile Include="Assets\back.cs" />
     <Compile Include="Assets\BackButtonScript.cs" />
     <Compile Include="Assets\buttonMute.cs" />
     <Compile Include="Assets\CanvasScipt.cs" />
+    <Compile Include="Assets\checkLoop.cs" />
     <Compile Include="Assets\ClassicPiano.cs" />
     <Compile Include="Assets\controlPlay.cs" />
     <Compile Include="Assets\CreatePointer.cs" />
     <Compile Include="Assets\Cursor.cs" />
     <Compile Include="Assets\ElectricPiano.cs" />
     <Compile Include="Assets\ExampleClass.cs" />
+    <Compile Include="Assets\ExitFunction.cs" />
     <Compile Include="Assets\FDD.cs" />
     <Compile Include="Assets\FileBrowser.cs" />
     <Compile Include="Assets\FileBrowser_launch.cs" />
@@ -98,6 +102,7 @@
     <Compile Include="Assets\importAudio.cs" />
     <Compile Include="Assets\InterpolateKeys.cs" />
     <Compile Include="Assets\KeyPress.cs" />
+    <Compile Include="Assets\Kickpedal.cs" />
     <Compile Include="Assets\LeapMotion\Core\Examples\Example Assets\InertiaPostProcessProvider.cs" />
     <Compile Include="Assets\LeapMotion\Core\Examples\Example Assets\ProjectionPostProcessProvider.cs" />
     <Compile Include="Assets\LeapMotion\Core\Plugins\LeapCSharp\Arm.cs" />
@@ -362,6 +367,7 @@
     <Compile Include="Assets\LoopStation.cs" />
     <Compile Include="Assets\mixLevel.cs" />
     <Compile Include="Assets\muteAndSolo.cs" />
+    <Compile Include="Assets\openWebPage.cs" />
     <Compile Include="Assets\OrganPiano.cs" />
     <Compile Include="Assets\PanelScipt.cs" />
     <Compile Include="Assets\particle.cs" />
@@ -381,12 +387,13 @@
     <Compile Include="Assets\test.cs" />
     <Compile Include="Assets\TextFileFinder.cs" />
     <Compile Include="Assets\TextFileFinder_launch.cs" />
+    <Compile Include="Assets\ticktick.cs" />
     <Compile Include="Assets\TimeProgressBar.cs" />
     <Compile Include="Assets\UETools\Magic_Particle_Effects\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\velocity.cs" />
     <Compile Include="Assets\VelocityWithDelay.cs" />
-    <Compile Include="Assets\WRMHL\Scripts\Kickpedal.cs" />
     <Compile Include="Assets\WRMHL\Scripts\Manager\wrmhl.cs" />
+    <Compile Include="Assets\WRMHL\Scripts\pedal.cs" />
     <Compile Include="Assets\WRMHL\Scripts\readwrite.cs" />
     <Compile Include="Assets\WRMHL\Scripts\Sustainpedal.cs" />
     <Compile Include="Assets\WRMHL\Scripts\Thread\Common\wrmhlThread.cs" />
@@ -426,16 +433,16 @@
     <None Include="Assets\kits\AnalogDub\AnalogDub.xml" />
     <None Include="Assets\AndrijaAssets\Shaders\MDSRNACube optimized 1.shader" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/김진우/Desktop/Unity project/practice/Harmony_origin/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/김진우/Desktop/Harmony_Final/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/김진우/Desktop/Unity project/practice/Harmony_origin/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/김진우/Desktop/Harmony_Final/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/김진우/Desktop/Unity project/practice/Harmony_origin/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/김진우/Desktop/Harmony_Final/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/김진우/Desktop/Unity project/practice/Harmony_origin/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/김진우/Desktop/Harmony_Final/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -636,7 +643,7 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="InteractionEngineUtility">
-      <HintPath>C:/Users/김진우/Desktop/Unity project/practice/Harmony_origin/Assets/LeapMotion/Modules/InteractionEngine/Plugins/InteractionEngineUtility.dll</HintPath>
+      <HintPath>C:/Users/김진우/Desktop/Harmony_Final/Assets/LeapMotion/Modules/InteractionEngine/Plugins/InteractionEngineUtility.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>C:/Users/김진우/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>

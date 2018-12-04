@@ -16,14 +16,11 @@ EditorBuildSettings:
     guid: bdc45fa1bc1b6654eadef3edd6061a0a
   - enabled: 1
     path: Assets/MERGE/Drum.unity
-    guid: 7983e0bd36d95bb49bc8264e26816949
+    guid: 86d6be6cd20c7b9498d4ab6e92311d48
   - enabled: 1
     path: Assets/MERGE/Keyboard.unity
     guid: 75f7d8192b9885a40a28dc84060fa86b
   - enabled: 1
     path: Assets/MERGE/Launchpad.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   m_configObjects: {}
