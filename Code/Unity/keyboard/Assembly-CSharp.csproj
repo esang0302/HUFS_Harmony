@@ -62,7 +62,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AudioObjectCameraMatcher.cs" />
+    <Compile Include="Assets\enableKeyboard.cs" />
     <Compile Include="Assets\followHand.cs" />
+    <Compile Include="Assets\keyboardPlay.cs" />
+    <Compile Include="Assets\keyboardPlaySynth.cs" />
     <Compile Include="Assets\KeyPress.cs" />
     <Compile Include="Assets\LeapMotion\Core\Examples\Example Assets\InertiaPostProcessProvider.cs" />
     <Compile Include="Assets\LeapMotion\Core\Examples\Example Assets\ProjectionPostProcessProvider.cs" />
@@ -315,6 +318,7 @@
     <Compile Include="Assets\LeapMotion\Modules\InteractionEngine\Scripts\Utility\PhysicsCallbacks.cs" />
     <Compile Include="Assets\Oscillator.cs" />
     <Compile Include="Assets\pianoPlay.cs" />
+    <Compile Include="Assets\Synth.cs" />
     <None Include="Assets\LeapMotion\Core\Resources\LeapCG.cginc" />
     <None Include="Assets\LeapMotion\Core\README_BEFORE_UPDATING.txt" />
     <None Include="Assets\LeapMotion\Core\readme.txt" />

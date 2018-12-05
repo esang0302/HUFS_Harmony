@@ -1,26 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
-public class KeyPress : MonoBehaviour {
-    public float MaxZRotation = 5.0f;
-    float ZRotationResetVelocity = - 0.3f;
-    public float ResetPlayTime;
 
+public class KeyPress : MonoBehaviour {
+    float MaxZRotation = 5.0f;
+    float ZRotationResetVelocity = - 0.3f;
+    float ResetPlayTime;
+    bool isLeap;
     private bool collided;
     private float currentResetPlayTime;
     private Vector3 initialPosition;
     private float t;
     private AudioSource audio;
     private AudioClip clip;
-
-    private double increment;
-    private double frequencyFixed = 440;
-    private float frequency;
-    float synthVol;
-    public float gain;
-    private double phase;
-    private double sampling_frequency = 48000.0;
+    public Button modeChange;
+    public string[] key = new string[17] { "a", "w", "s", "e", "d", "f", "t", "g", "y", "h", "u", "j", "k", "o", "l", "p", ";" };
+    public string myKey;
 
     private void Awake()
     {
@@ -29,20 +26,28 @@ public class KeyPress : MonoBehaviour {
         initialPosition = transform.position;
     }
     void Start () {
-        frequency = GameObject.Find("piano").GetComponent<Oscillator>().frequencies[Int32.Parse(gameObject.name)];
+
+        modeChange.GetComponentInChildren<Text>().text = "Leap motion\nmode";
+        if (Int32.Parse(gameObject.name) > 12 && Int32.Parse(gameObject.name) < 30)
+            myKey = key[Int32.Parse(gameObject.name) - 13];
+        else
+            myKey = "0";
+        isLeap = true;
         currentResetPlayTime = 0;
         audio = gameObject.GetComponent<AudioSource>();
-        clip = audio.clip;
         ResetPlayTime = 0.4f;
-        synthVol = 1f;
+        modeChange.onClick.AddListener(isleap);
     }
 
     // Update is called once per frame
    void Update () {
-        //return to origin state of piano
         currentResetPlayTime += Time.deltaTime;
-        //onPiano();
-        onSynth();
+
+        if (isLeap)
+
+            Leap();
+        else
+            NotLeap();
 
         if (transform.rotation.eulerAngles.z > 0.2f && !collided)
         {
@@ -69,44 +74,39 @@ public class KeyPress : MonoBehaviour {
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         
     }
-    public void OnAudioFilterRead(float[] data, int channels)
+    void isleap()
     {
-        increment = frequency * 2.0 * Mathf.PI / sampling_frequency;
-        for (int i = 0; i < data.Length; i += channels)
-        {
-            phase += increment;
-            data[i] = makeSinWave();
-
-            if (channels == 2)
-            {
-                data[i + 1] = data[i];
-            }
-            if (phase > (Mathf.PI * 2))
-            {
-                phase = 0.0;
-            }
-        }
-    }
-
-    void onSynth()
-    {
-        if (transform.rotation.eulerAngles.z > 1.5f)
-        {
-            audio.PlayOneShot(clip, 1f);
-            gain = 0.5f;
-        }
+        isLeap = !isLeap;
+        if (!isLeap)
+            modeChange.GetComponentInChildren<Text>().text = "Keyboard\nmode";
         else
-            gain = 0;
+        {
+            modeChange.GetComponentInChildren<Text>().text = "Leap motion\nmode";
+        }
+
     }
 
-    void onPiano()
+    void Leap()
     {
         if (transform.rotation.eulerAngles.z > 1.5f && currentResetPlayTime >= ResetPlayTime && !collided)
         {
-            audio.PlayOneShot(clip, 1f);
+            audio.PlayOneShot(audio.clip, 1f);
             currentResetPlayTime = 0f;
+        };
+    }
+    void NotLeap()
+    {
+        if (Input.GetKeyDown(myKey))
+        {
+            audio.PlayOneShot(audio.clip, 1f);
+            currentResetPlayTime = 0f;
+            Debug.Log("눌렀다");
         }
     }
+
+
+
+
 
     private void OnCollisionExit(Collision collision)
     {
@@ -119,28 +119,5 @@ public class KeyPress : MonoBehaviour {
     {
         if (collision.gameObject.tag == "target")
             collided = true;
-
-        
-    }
-
-   
-
-
-    public float makeSinWave()
-    {
-        return (float)(gain * Mathf.Sin((float)phase));
-    }
-
-    public float makeSquareWave()
-    {
-        if (gain * Mathf.Sin((float)phase) >= 0 * gain)
-            return (float)gain * 0.6f;
-        else
-            return (-(float)gain) * 0.6f;
-    }
-
-    public float makeTriangleWave()
-    {
-        return (float)(gain * (double)Mathf.PingPong((float)phase, 1.0f));
     }
 }
