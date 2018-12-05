@@ -87,7 +87,7 @@ public class Kickpedal : MonoBehaviour {
 
     void Music(int volume)
     {
-        float vol = Remap((float)(volume / 200.0), 0, 0.6f, 0.3f, 1f); // 들어온 센서의 최댓값이 200이여서 linear하게 mapping
+        float vol = Remap((float)(volume / 50.0), 0, 0.6f, 0.3f, 1f); // 들어온 센서의 최댓값이 200이여서 linear하게 mapping
         source.volume = vol;
         source.clip = sound;
         source.PlayOneShot(sound, vol); // Play One shot으로 드럼 소리 출력

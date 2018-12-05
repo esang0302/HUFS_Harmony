@@ -30,7 +30,7 @@ public class TextFileFinder_launch : MonoBehaviour
     {
         source = GameObject.Find(Padname).GetComponent<AudioSource>();
         m_fileBrowser1 = new FileBrowser_launch(
-                new Rect(10, 100, 600, 300),
+                new Rect(600, 100, 600, 300),
                 "Choose Audio File",
                 FileSelectedCallback
             

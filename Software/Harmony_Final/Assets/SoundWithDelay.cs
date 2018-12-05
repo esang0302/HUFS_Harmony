@@ -95,7 +95,7 @@ public class SoundWithDelay : MonoBehaviour
 
                 //rend.material.SetColor("_Color", Random.ColorHSV());
                 //audioSource.PlayOneShot(play, 1);
-                Debug.Log("collision.relativeVelocity.magnitude: " + (collision.relativeVelocity.magnitude) / 100);
+                Debug.Log("collision.relativeVelocity.magnitude: " + (collision.relativeVelocity.magnitude) / 20);
                 /*foreach (ContactPoint contact in collision.contacts)
                 {
                     GameObject particle = Instantiate(particles.gameObject, contact.point, Quaternion.LookRotation(contact.normal));
