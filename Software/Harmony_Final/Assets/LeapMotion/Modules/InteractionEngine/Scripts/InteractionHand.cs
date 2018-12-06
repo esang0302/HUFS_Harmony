@@ -430,7 +430,8 @@ namespace Leap.Unity.Interaction {
         for (int jointIndex = 0; jointIndex < BONES_PER_FINGER; jointIndex++) {
           GameObject contactBoneObj = new GameObject("Contact Fingerbone", typeof(CapsuleCollider), typeof(Rigidbody), typeof(ContactBone));
           contactBoneObj.layer = manager.contactBoneLayer;
-          
+          contactBoneObj.transform.localScale = new Vector3(0.1f,0.1f,0.1f);
+          contactBoneObj.tag = "target";
           Bone bone = _unwarpedHandData.Fingers[fingerIndex]
                                        .Bone((Bone.BoneType)(jointIndex) + 1); // +1 to skip first bone.
           int boneArrayIndex = fingerIndex * BONES_PER_FINGER + jointIndex;
@@ -448,13 +449,16 @@ namespace Leap.Unity.Interaction {
             targetPosition = theBone.Center.ToVector3();
             targetRotation = theBone.Rotation.ToQuaternion();
           };
-
+//I changed collider.radius at Here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! #############################################################################################
           CapsuleCollider capsule = contactBoneObj.GetComponent<CapsuleCollider>();
           capsule.direction = 2;
-          capsule.radius = bone.Width * 0.5f;
-          capsule.height = bone.Length + bone.Width;
+          //capsule.radius = bone.Width * 0.5f;
+          if (fingerIndex == 0)
+                capsule.height = bone.Length + bone.Width + 0.02f;
+          else
+                capsule.height = bone.Length + bone.Width;
           capsule.material = defaultContactBoneMaterial;
-
+          capsule.radius = 0.005f;
           ContactBone contactBone = initContactBone(bone, contactBoneObj, boneArrayIndex, capsule);
 
           contactBone.lastTargetPosition = bone.Center.ToVector3();

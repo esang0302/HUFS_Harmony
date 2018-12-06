@@ -54,7 +54,7 @@ namespace Leap.Unity.Interaction {
     /// </summary>
     public float width {
       get {
-        Vector3 scale = collider.transform.lossyScale;
+        Vector3 scale = collider.transform.lossyScale*0.1f;
         if (collider is SphereCollider) {
           SphereCollider sphere = collider as SphereCollider;
           return Mathf.Min(sphere.radius * scale.x,
@@ -117,7 +117,7 @@ namespace Leap.Unity.Interaction {
       interactionController.manager.contactBoneBodies.Remove(rigidbody);
     }
 
-    void OnCollisionEnter(Collision collision) {
+   void OnCollisionEnter(Collision collision) {
       #if UNITY_EDITOR
       bool hitNonInteractionObject = false;
       #endif
@@ -161,7 +161,7 @@ namespace Leap.Unity.Interaction {
           #endif
         }
       }
-
+      
       #if UNITY_EDITOR
       if (hitNonInteractionObject) {
         // If we hit something that isn't an Interaction Behaviour, there's probably an issue.

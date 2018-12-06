@@ -1,38 +1,57 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
 
 public class KeyPress : MonoBehaviour {
-    public float MaxZRotation = 6.0f;
-    public float ZRotationResetVelocity = -6;
-   public float ResetPlayTime = 0.5f;
-
-    private float currentResetPlayTime = 0;
+    float MaxZRotation = 5.0f;
+    float ZRotationResetVelocity = - 0.3f;
+    float ResetPlayTime;
+    bool isLeap;
+    private bool collided;
+    private float currentResetPlayTime;
     private Vector3 initialPosition;
     private float t;
-    AudioSource audio;
-    AudioClip clip;
+    private AudioSource audio;
+    private AudioClip clip;
+    public Button modeChange;
+    public string[] key = new string[17] { "a", "w", "s", "e", "d", "f", "t", "g", "y", "h", "u", "j", "k", "o", "l", "p", ";" };
+    public string myKey;
+
     private void Awake()
     {
+        collided = false;
         Physics.IgnoreLayerCollision(LayerMask.NameToLayer("piano"), LayerMask.NameToLayer("piano"), true);
+        initialPosition = transform.position;
     }
     void Start () {
-       
-        initialPosition = transform.position;
-        currentResetPlayTime = ResetPlayTime;
+
+        modeChange.GetComponentInChildren<Text>().text = "Leap motion\nmode";
+        if (Int32.Parse(gameObject.name) > 12 && Int32.Parse(gameObject.name) < 30)
+            myKey = key[Int32.Parse(gameObject.name) - 13];
+        else
+            myKey = "0";
+        isLeap = true;
+        currentResetPlayTime = 0;
         audio = gameObject.GetComponent<AudioSource>();
-        clip = audio.clip;
-        
+        ResetPlayTime = 0.4f;
+        modeChange.onClick.AddListener(isleap);
     }
 
     // Update is called once per frame
    void Update () {
-        //return to origin state of piano
-        t = Time.deltaTime;
-        if (transform.rotation.eulerAngles.z > 0.2f)
-        { 
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, t * (-6)));
-            //transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0);
+        currentResetPlayTime += Time.deltaTime;
+
+        if (isLeap)
+
+            Leap();
+        else
+            NotLeap();
+
+        if (transform.rotation.eulerAngles.z > 0.2f && !collided)
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, -0.2f));
             GetComponent<Rigidbody>().angularDrag = 0;
             GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         }
@@ -44,37 +63,61 @@ public class KeyPress : MonoBehaviour {
             GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         }
         //Can't over the limit of origin state
-        if (transform.rotation.eulerAngles.z < 0)
+        if (transform.rotation.eulerAngles.z > 350 || transform.rotation.eulerAngles.z < 0)
         {
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0);
             GetComponent<Rigidbody>().angularDrag = 0;
             GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         }
 
-        if (currentResetPlayTime < ResetPlayTime)
-            currentResetPlayTime += Time.deltaTime;
-
         transform.position = initialPosition;
         GetComponent<Rigidbody>().velocity = Vector3.zero;
-
         
     }
-    void OnCollisionEnter(Collision collision)
+    void isleap()
     {
-        if (GetComponent<Collider>().bounds.max.x > collision.contacts[0].point.x && GetComponent<Collider>().bounds.min.x < collision.contacts[0].point.x
-            && GetComponent<Collider>().bounds.min.y < collision.contacts[0].point.y)
+        isLeap = !isLeap;
+        if (!isLeap)
+            modeChange.GetComponentInChildren<Text>().text = "Keyboard\nmode";
+        else
         {
-            if (currentResetPlayTime >= ResetPlayTime)
-            {
-                currentResetPlayTime = 0.0f;
-            }
-            //play sound when eulerAngles.z > 1.5
-            if (transform.rotation.eulerAngles.z > 0.8f)
-            {
-                audio.PlayOneShot(clip, 1f);
-            }
+            modeChange.GetComponentInChildren<Text>().text = "Leap motion\nmode";
         }
-        //transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, MaxZRotation);
+
     }
 
+    void Leap()
+    {
+        if (transform.rotation.eulerAngles.z > 1.5f && currentResetPlayTime >= ResetPlayTime && !collided)
+        {
+            audio.PlayOneShot(audio.clip, 1f);
+            currentResetPlayTime = 0f;
+        };
+    }
+    void NotLeap()
+    {
+        if (Input.GetKeyDown(myKey))
+        {
+            audio.PlayOneShot(audio.clip, 1f);
+            currentResetPlayTime = 0f;
+            Debug.Log("눌렀다");
+        }
+    }
+
+
+
+
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "target")
+            collided = false;
+        
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "target")
+            collided = true;
+    }
 }
