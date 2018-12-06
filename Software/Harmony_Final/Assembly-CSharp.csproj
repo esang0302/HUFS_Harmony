@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{55FCEF7B-753E-4291-CEEF-2CDB264A902F}</ProjectGuid>
+    <ProjectGuid>{E11B8450-D04F-073B-C6E6-BFB923E5500A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -76,11 +76,10 @@
     <Compile Include="Assets\buttonMute.cs" />
     <Compile Include="Assets\CanvasScipt.cs" />
     <Compile Include="Assets\checkLoop.cs" />
-    <Compile Include="Assets\ClassicPiano.cs" />
+    <Compile Include="Assets\checkSustain.cs" />
     <Compile Include="Assets\controlPlay.cs" />
     <Compile Include="Assets\CreatePointer.cs" />
     <Compile Include="Assets\Cursor.cs" />
-    <Compile Include="Assets\ElectricPiano.cs" />
     <Compile Include="Assets\enableKeyboard.cs" />
     <Compile Include="Assets\ExampleClass.cs" />
     <Compile Include="Assets\ExitFunction.cs" />
@@ -371,11 +370,9 @@
     <Compile Include="Assets\mixLevel.cs" />
     <Compile Include="Assets\muteAndSolo.cs" />
     <Compile Include="Assets\openWebPage.cs" />
-    <Compile Include="Assets\OrganPiano.cs" />
     <Compile Include="Assets\Oscillator.cs" />
     <Compile Include="Assets\PanelScipt.cs" />
     <Compile Include="Assets\particle.cs" />
-    <Compile Include="Assets\PianoKeyScript.cs" />
     <Compile Include="Assets\pianoPlay.cs" />
     <Compile Include="Assets\RecordScript.cs" />
     <Compile Include="Assets\scale_L.cs" />
@@ -388,6 +385,7 @@
     <Compile Include="Assets\SoundWithoutDaDa.cs" />
     <Compile Include="Assets\StartSceneScript.cs" />
     <Compile Include="Assets\stopPlay.cs" />
+    <Compile Include="Assets\sustain.cs" />
     <Compile Include="Assets\Synth.cs" />
     <Compile Include="Assets\test.cs" />
     <Compile Include="Assets\TextFileFinder.cs" />
@@ -438,16 +436,16 @@
     <None Include="Assets\kits\AnalogDub\AnalogDub.xml" />
     <None Include="Assets\AndrijaAssets\Shaders\MDSRNACube optimized 1.shader" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>D:/GitHub/MyProject/HUFS_Harmony/Software/Harmony_Final/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/김진우/Desktop/Harmony_Final - 복사본 (2)/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/GitHub/MyProject/HUFS_Harmony/Software/Harmony_Final/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/김진우/Desktop/Harmony_Final - 복사본 (2)/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/GitHub/MyProject/HUFS_Harmony/Software/Harmony_Final/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/김진우/Desktop/Harmony_Final - 복사본 (2)/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/GitHub/MyProject/HUFS_Harmony/Software/Harmony_Final/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/김진우/Desktop/Harmony_Final - 복사본 (2)/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -648,7 +646,7 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="InteractionEngineUtility">
-      <HintPath>D:/GitHub/MyProject/HUFS_Harmony/Software/Harmony_Final/Assets/LeapMotion/Modules/InteractionEngine/Plugins/InteractionEngineUtility.dll</HintPath>
+      <HintPath>C:/Users/김진우/Desktop/Harmony_Final - 복사본 (2)/Assets/LeapMotion/Modules/InteractionEngine/Plugins/InteractionEngineUtility.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>C:/Users/김진우/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>

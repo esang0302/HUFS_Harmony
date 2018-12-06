@@ -59,7 +59,7 @@ public class LoopPedal : MonoBehaviour
 
         sensor = myDevice.readQueue(); // 아두이노로부터 data 받아옴(string)
         val = Convert.ToInt32(sensor);
-        if (val > 5)
+        if (val > 50)
         {
             if (timeSpan >= checkTime)
             {

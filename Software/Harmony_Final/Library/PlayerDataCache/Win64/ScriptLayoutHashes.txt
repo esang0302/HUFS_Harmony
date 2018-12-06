@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/김진우/Desktop/HM SW beta version/Harmony.exe
+C:/Users/김진우/Desktop/Harmony_ver_1.3/Harmony.exe
 SceneListBegin?
 Assets/MERGE/1Start.unity
 Assets/MERGE/2Login.unity
@@ -10,7 +10,7 @@ Assets/MERGE/Keyboard.unity
 Assets/MERGE/Launchpad.unity
 SceneListEnd?
 599fb1ae6c07c7318ffa757dfeebd960 Assembly-CSharp.dll:GracesGames.SimpleFileBrowser.Scripts.UI.PortraitUserInterface
-486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.pianoPlay
+1e0961328561ebec7e91e0abe59ab44b Assembly-CSharp.dll:.pianoPlay
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.PanelScipt
 71e8649263b43d6ede3d16fe8f28e5bd Assembly-CSharp.dll:Leap.Unity.InputModule.Cursor3D
 c422dd62785a6d0afa870fbd111886ce Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
@@ -40,6 +40,7 @@ f6637497451c9a030c421de4a1ad5cdb Unity.TextMeshPro.dll:TMPro.TMP_ScrollbarEventH
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.buttonMute
 3df1df55bccb3a8b2ac90b869035d8e8 Assembly-CSharp.dll:Leap.Unity.InputModule.ToggleToggler
 556f390a640d4398e5782de0c7f17a23 Assembly-CSharp.dll:Leap.Unity.PinchDetector
+00bcae075a0d7d8a2facf68f4c8c761f Assembly-CSharp.dll:.Synth
 632011b4df9b8d83a68f2f0af3ddf2b5 Assembly-CSharp.dll:.Kickpedal
 924213724f41d08ffaaa999f47184a75 Assembly-CSharp.dll:.audioclips
 b14b4630cc47b6e9ea8a644551a6a8cc Unity.TextMeshPro.dll:TMPro.TMP_Text
@@ -169,6 +170,7 @@ d8e188c54043c34be637cb56853637fb Assembly-CSharp.dll:.CycleHandPairs
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.importAudio
 6aa6abf5179c9b70e6394a949f994a2a Assembly-CSharp.dll:Leap.Unity.ProximityDetector
 4ee5364a52e45d1216c7c4c21e1cf410 Assembly-CSharp.dll:.TextFileFinder_launch
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.keyboardPlay
 87f017d03f98010c7df04f35dbe06e1d Assembly-CSharp.dll:Leap.Unity.FrameRateControls
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.checkLoop
 edaaf79d7b546dc860b44729b6320142 Assembly-CSharp.dll:Leap.Unity.Interaction.InteractionManager
@@ -196,8 +198,9 @@ e1e9a0ad0fb24da7d805fa6fca1b434b Assembly-CSharp.dll:.SoundWithDelay
 bb93a1a4febb8a55094815cb91da7983 Assembly-CSharp.dll:.readwrite
 946b71c2c893531915f577ba85f28b81 Assembly-CSharp.dll:Leap.Unity.Attachments.AttachmentHands
 79ae1a2daa5af3876857e6f0dbc6c225 Assembly-CSharp.dll:Leap.Unity.FpsLabel
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.enableKeyboard
 50fa2bc4ecf49738668ea61a7dd4312b Assembly-CSharp.dll:.sound_R
-c438370729e20f42f385ac20e0f72335 Assembly-CSharp.dll:.KeyPress
+4915e90d8fb27ea1d0e84a87697438b6 Assembly-CSharp.dll:.KeyPress
 c42ed4dea83cd6f16ac9b50a46d19a31 Assembly-CSharp.dll:Leap.Unity.Space.LeapSpaceAnchor
 77ac23a0103d3974146f1c881e277816 Assembly-CSharp.dll:Leap.Unity.Examples.InertiaPostProcessProvider
 7029850b15dc64903556a89714abd370 Assembly-CSharp.dll:Leap.Unity.Interaction.AnchorScoreTest
@@ -219,7 +222,6 @@ c1f7ef724bdfbd6cbcd7bf8086b4d317 Assembly-CSharp.dll:Leap.Unity.LeapHandsAutoRig
 c4d0f8b8aba8b8007649a3a2b37fc5c5 Assembly-CSharp.dll:Leap.Unity.scale_L
 2775c069d3bf01886532bb3e57d343f7 Assembly-CSharp.dll:Leap.Unity.KeyEnableGameObjects
 14a72f239f983c023a5f3e20f41837e6 Assembly-CSharp.dll:Leap.Unity.InputModule.LeapInputModule
-42e5a17a79fa80fbb0270815210849e9 Assembly-CSharp.dll:.PianoKeyScript
 1bd4b9ca955e76278e01c919bf1db546 Assembly-CSharp.dll:Leap.Unity.LeapEyeDislocator
 99329954fe436ff095486e1ff49e99a7 Assembly-CSharp.dll:.stopPlay
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:Leap.Unity.Interaction.PhysicsCallbacks
@@ -237,6 +239,7 @@ eaf0bcdb10d442a4029d615f41d09957 Unity.TextMeshPro.dll:TMPro.TextContainer
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.ActivateButton3
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.test
 7aa107a435969f9a1f151f773cfeb456 Assembly-CSharp.dll:Leap.Unity.Examples.SimpleInteractionEmission
+bc7eb407576ca27e087204809322e83b Assembly-CSharp.dll:.sustain
 cd3c829b853a9743b60771db318f65b7 Assembly-CSharp.dll:.AudioRenderer
 fe1aad941ce8ddb26f3373c7400d52e8 Assembly-CSharp.dll:Leap.Unity.Examples.TransformRotationHandle
 ac27bac6cd3bb3cb8d42302fe4a436d6 Assembly-CSharp.dll:Leap.Unity.InputModule.SliderVolume
@@ -262,7 +265,6 @@ da21fc3f8056b1f91c3dd09c7bf4f90a UnityEngine.Networking.dll:UnityEngine.Networki
 529a95e9e8e7686c4816e08fbb37183f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 fc061f3ae8a876c0687e86378d4a447c UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 7ca56e063bd071986fff4f513cc4f477 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
-bd554e25e5412fce986eec3a5d7b9d4c Assembly-CSharp.dll:.ElectricPiano
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.AudioWaveFormVisualizerXXX
 9846689d237ae5b36d211dbb803b9b06 Assembly-CSharp.dll:Leap.Unity.FDD
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:Leap.Unity.Examples.SimpleScaleUtil
@@ -308,6 +310,7 @@ cb708845bcaac36a34f4eba88f0c6e52 Assembly-CSharp.dll:.SoundByContact
 0a006f3734181ba8b26758f0866152c0 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 75ccb45dba10b1a699ca4b3985adadc9 Assembly-CSharp.dll:Leap.Unity.Cursor
 50fa2bc4ecf49738668ea61a7dd4312b Assembly-CSharp.dll:.sound_Left
+360c9f28d4306218f3a039f2fe33d227 Assembly-CSharp.dll:.checkSustain
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.back
 a087b6b7d131e45ad39a898da89d29f2 Assembly-CSharp.dll:Leap.Unity.Examples.WorkstationPoseTest
 8185504ab39070ae36c555d690c9a1fd Assembly-CSharp.dll:Leap.Unity.PolyHand
@@ -319,11 +322,11 @@ ffa61427343badaa224475396ef2aeab Assembly-CSharp.dll:.particle
 e676a14721e4a821b0b08cd4b81b52fa Assembly-CSharp.dll:Leap.Unity.ExtendedFingerDetector
 e04473311b2d652c0e4e877b5cb5b66f Assembly-CSharp.dll:Leap.Unity.Comment
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.BackButtonScript
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.keyboardPlaySynth
 8185504ab39070ae36c555d690c9a1fd Assembly-CSharp.dll:Leap.Unity.SkeletalHand
 9dff9b8d35e6d6fa26b99b202de536f6 Assembly-CSharp.dll:Leap.Unity.RigidFinger
 e04611b8715e6833d2bd7010fc6be10b Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 681548311a1d4d82f5696e284207034e Assembly-CSharp.dll:Leap.Unity.Attachments.AttachmentHand
-bd554e25e5412fce986eec3a5d7b9d4c Assembly-CSharp.dll:.ClassicPiano
 b249baf0a784f9d277eb76a293fa4692 Assembly-CSharp.dll:Leap.Unity.LeapXRServiceProvider
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:Leap.Unity.CreatePointer
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.ActivateButton2
@@ -334,9 +337,9 @@ b249baf0a784f9d277eb76a293fa4692 Assembly-CSharp.dll:Leap.Unity.LeapXRServicePro
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.arduinoDisconnect
 e15b09d0ab66c568392c25a1a30c8bc3 Assembly-CSharp.dll:Leap.Unity.DetectorLogicGate
 567c362d2e114d4c7f35dbbfd20ccba0 Assembly-CSharp.dll:Leap.Unity.Examples.TransformTool
-bd554e25e5412fce986eec3a5d7b9d4c Assembly-CSharp.dll:.OrganPiano
 93307bd34e39d73fd24e00ec39c25a91 Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 0e1c743f39d1272556d4a29827d87fab Assembly-CSharp.dll:Leap.Unity.KeyEnableBehaviors
 f102f1dd6e340b0e67044a652a5951cd Assembly-CSharp.dll:Leap.Unity.Interaction.AnchorableBehaviour
 e8d6d906ad5bceeee2319002ac6cccac Assembly-CSharp.dll:Leap.Unity.StationaryTestLeapProvider
+a35e2b00202d4a0b62c4c58715e0a575 Assembly-CSharp.dll:.Oscillator
 42d777e4cfbdb620738b4f62bab8c35e Assembly-CSharp.dll:Leap.Unity.PolyFinger

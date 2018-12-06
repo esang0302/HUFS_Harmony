@@ -20,7 +20,7 @@ public class checkLoop : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
-        if(loopstation.click > 0)
+        if(loopstation.click == 1 )
         {
             imageOn = true;
             foot.enabled = true;

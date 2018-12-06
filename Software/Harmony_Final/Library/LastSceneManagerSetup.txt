@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/JY.unity
+- path: Assets/MERGE/Drum.unity
   isLoaded: 1
   isActive: 1

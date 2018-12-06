@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class pianoPlay : MonoBehaviour {
     AudioSource source;
     private string inst;//classic, electric, synth
     string path;
+    public AudioMixer mixer;
+
 	void Awake () {
         classic();
     }
@@ -26,7 +29,7 @@ public class pianoPlay : MonoBehaviour {
     }
     public void setReverb(float value)
     {
-        gameObject.GetComponent<AudioSource>().outputAudioMixerGroup.audioMixer.SetFloat("Reverb", value);
+        mixer.SetFloat("Reverb", value);
     }
 
     public void selectSound(string path)
