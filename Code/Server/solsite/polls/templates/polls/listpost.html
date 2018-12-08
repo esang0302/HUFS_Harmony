@@ -1,0 +1,46 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Upload Files</title>
+</head>
+<body>
+<h1><a href="/">Harmony Website</a></h1>
+<table cellspacing=1 width=700 border=1>
+      <tr>
+          <td width=50><p align=center>번호</p></td>
+          <td width=100><p align=center>이름</p></td>
+          <td width=320><p align=center>제목</p></td>
+          <td width=116><p align=center>등록일</p></td>
+      </tr>
+
+  </table>
+<table cellspacing=1 width=700 border=1>
+        {% if boardList %}
+        <ul>
+            {% for boardRow in boardList %}
+            <tr>
+            <td width=50><p align=center>{{ boardRow.postnum }}</p></td>
+            <td width=100><p align=center>{{ boardRow.ID }}</p></td>
+            <td width=320><p align=center>
+                    <a href="/viewWork?postnum={{ boardRow.postnum }}" target="_blank">{{ boardRow.title }}
+                    </a>
+                </p>
+            </td>
+            <td width=100><p align=center>{{ boardRow.created_date }}</p></td>
+            <!--<td width=100><p align=center>{{ boardRow.hits }}</p></td>-->
+            </tr>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No Data.</p>
+    {% endif %}
+</table>
+      <tr>
+          <td><a href="/write/new/"><input type=button value="글쓰기"  OnClick="window.location='/write/new/'"></a></td>
+
+      </tr>
+
+
+
+</body>
+</html>
