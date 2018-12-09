@@ -1,0 +1,36 @@
+
+
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="site-heading">
+                  <h1><a href="/">Harmony Website</a></h1>
+                  <hr class="small">
+                  <span class="subheading">Login</span>
+              </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<form method="POST" class="signup-form" action="{% url 'signup_done' %}">
+{% csrf_token %}
+<fieldset style = "width:150">
+    <legend>
+    아이디 : <input type = "text" name = "ID"/><br><br>
+    비밀번호 : <input type = "password" name = "PW"/><br><br>
+    <p>악기를 선택해주세요</p>
+    <input type="checkbox" name="instrument[]" value="drum">드럼
+    <input type="checkbox" name="instrument[]" value="keyboard">건반
+    <input type="checkbox" name="instrument[]" value="launchpad">런치패드
+    </legend>
+</fieldset>
+
+<input type="submit" class="save btn btn-success" value="signup">
+<a href="{% url 'signup_done' %}">
+    <button type="button" class="btn btn-danger"><a href="/"> cancel</a></button>
+</a>
+</form>
