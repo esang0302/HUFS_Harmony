@@ -1,0 +1,66 @@
+{% extends 'Harmony/base.html' %}
+{% load staticfiles %}
+
+{% load staticfiles %}
+
+
+{% block heading %}
+{% if post.cover_img %}
+<br class="intro-header" style="background-image: url('{{post.cover_img.url}}')">
+{% else %}
+<header class="intro-header" style="background-image: url('{% static 'bsr/img/home-bg.jpg' %}')">
+{% endif %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <a class="heading" href="/">
+                  <h1>{{ title }}</h1>
+                </a>
+                  <span class="meta">by {{ ID }}</span>
+              </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<script language="javascript">
+
+    function boardlist()
+    {
+        location.href = '/';
+    }
+
+    function boardmodify()
+    {
+        location.href='/postmodify?postnum={{ postnum }}';
+    }
+
+    function boarddelete()
+    {
+        location.href='/postdelete?postnum={{ postnum }}';
+    }
+
+
+
+</script>
+	{% autoescape off %}
+	<tr><td><b>내용 </b></td><td width=350> {{ contents }} </td></tr>
+    <br><tr><td><b>파일 다운로드 </b></td><td><a href="{{ MEDIA_URL }}{{ filepath }}" target="_blank">{{ filename }}</a></td></tr></br>
+    <tr><td><b>등록일 </b></td><td> {{ created_date }} </td></tr>
+	{% endautoescape %}
+
+
+  <div class="post-set-btn">
+	<div class="btn-wrap">
+      <button type="button" class="btn btn-success" OnClick="javascript:boardmodify()">수정</button>
+      <button type="button" class="btn btn-danger" OnClick="javascript:boarddelete()">삭제</button>
+      <button type="button" class="btn btn-info" OnClick="javascript:boardlist()">목록</button>
+	</div>
+  </div>
+{% endblock %}
+
+
+

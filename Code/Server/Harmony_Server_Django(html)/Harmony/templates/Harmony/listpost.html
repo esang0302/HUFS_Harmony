@@ -1,0 +1,54 @@
+{% extends 'Harmony/base.html' %}
+{% load staticfiles %}
+
+{% block heading %}
+<header class="intro-header" style="background-image: url('{% static 'bsr/img/home-bg.jpg' %}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="site-heading">
+                  <h1 class><a class="heading" href="/">Harmony Board</a></h1>
+                  <hr class="small">
+                  <span class="subheading">음악 공유 게시판</span>
+              </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+
+{% block content %}
+
+<div id="board" class="container">
+	<div class="table-responsive text-center">
+		<table class="table text-center table-hover">
+            {% if boardList %}
+			<thead>
+				<tr>
+					<th width=50><p align=center>번호</th>
+					<th>제목</th>
+					<th>이름</th>
+					<th>등록일</th>
+				</tr>
+			</thead>
+            {% else %}
+                <p>No Data.</p>
+            {% endif %}
+			<tbody>
+				{% for boardRow in boardList %}
+				<tr>
+					<td><p align=center>{{ boardRow.postnum }}</td>
+                    <td><p align=center><a href="/viewWork/postnum={{ boardRow.postnum }}">{{ boardRow.title }}
+                    <td><p align=center>{{ boardRow.ID }}</td>
+					<td><p align=center>{{ boardRow.created_date }}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>
+
+{% endblock content %}
+
+

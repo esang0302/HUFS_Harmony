@@ -1,0 +1,51 @@
+{% extends 'Harmony/base.html' %}
+{% load staticfiles %}
+
+{% block heading %}
+<header class="intro-header" style="background-image: url('{% static 'bsr/img/home-bg.jpg' %}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="site-heading">
+                <a class="heading" href="/">
+                  <h1>Harmony Board</h1>
+                  <hr class="small">
+                  <span class="subheading">Edit Post</span>
+                </a>
+              </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+
+{% block content %}
+<script language="javascript">
+
+	function boardlist()
+	{
+        location.href = '/';
+    }
+
+</script>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <form enctype="multipart/form-data" method="POST" >
+        <table  width=700 border=2 cellspacing=0 cellpadding=5>
+            <tr><td><b><p align=center>제목</b></td><td><input style="background-color:transparent;" type=text name='title' size=64  maxlength=50></td></tr>
+            <tr><td><b><p align=center>내용</b></td><td><textarea style="background-color:transparent;" name='contents' cols=68 rows=10></textarea></td></tr>
+            <tr><td><b><p align=center>파일 업로드</b></td><td>
+            <form  action="" method="POST">
+                {% csrf_token %}
+                <input type="file" name="file">
+            </form>
+            </td>
+            </tr>
+        </table>
+        <button type="submit" class="save btn btn-success" value="save">등록</button>
+    </form>
+</div>
+{% endblock content %}
+
+
+
