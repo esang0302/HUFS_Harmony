@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Upload Files</title>
+</head>
+<body>
+<h1><a href="/">Harmony Website</a></h1>
+<ul class="nav navbar-nav navbar-right">
+  <li><a href="{% url 'signup' %}">회원가입</a></li>
+    {% if user.is_active %}
+  <li><a href="{%url 'signin' %}"> <span class="glyphicon glyphicon-heart"></span> {{user.username}}님</a></li>
+  <li><a href="{% url 'signout' %}">로그아웃</a></li>
+  {% else %}
+  <li><a href="{%url 'signin' %}"> <span class="glyphicon glyphicon-user"></span> 로그인</a></li>
+  <li><a href="{% url 'admin:index' %}">Admin</a></li>
+  {% endif %}
+</ul>
+<p id="demo"></p>
+<table cellspacing=1 width=700 border=1>
+      <tr>
+          <td width=50><p align=center>번호</p></td>
+          <td width=100><p align=center>이름</p></td>
+          <td width=320><p align=center>제목</p></td>
+          <td width=116><p align=center>등록일</p></td>
+      </tr>
+
+  </table>
+<table cellspacing=1 width=700 border=1>
+        {% if boardList %}
+        <ul>
+            {% for boardRow in boardList %}
+            <tr>
+            <td width=50><p align=center>{{ boardRow.postnum }}</p></td>
+            <td width=100><p align=center>{{ boardRow.ID }}</p></td>
+            <td width=320><p align=center>
+                    <a href="/viewWork/postnum={{ boardRow.postnum }}" >{{ boardRow.title }}
+                    </a>
+                </p>
+            </td>
+            <td width=100><p align=center>{{ boardRow.created_date }}</p></td>
+            <!--<td width=100><p align=center>{{ boardRow.hits }}</p></td>-->
+            </tr>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No Data.</p>
+    {% endif %}
+</table>
+
+      <tr>
+          <td><a href="/write/new/"><input type=button value="글쓰기"  OnClick="window.location='/write/new/'"></a></td>
+
+      </tr>
+
+
+</body>
+</html>

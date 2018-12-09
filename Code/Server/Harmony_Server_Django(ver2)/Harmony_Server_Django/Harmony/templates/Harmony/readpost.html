@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>글보기</title>
+</head>
+<body>
+<h1><a href="/">Harmony Website</a></h1>
+<script language="javascript">
+
+    function boardlist()
+    {
+        location.href = '/';
+    }
+
+    function boardmodify()
+    {
+        location.href='/postmodify?postnum={{ postnum }}';
+    }
+
+    function boarddelete()
+    {
+        location.href='/postdelete?postnum={{ postnum }}';
+    }
+
+
+
+</script>
+
+
+<table cellspacing = 0 cellpadding = 5 border = 1 width=500>
+    <tr><td><b>ID </b></td><td> {{ ID }} </td></tr>
+    <tr><td><b>제목 </b></td><td> {{ title }} </td></tr>
+    <tr><td><b>내용 </b></td><td width=350> {{ contents }} </td></tr>
+    <tr><td><b>파일 다운로드 </b></td><td><a href="{{ MEDIA_URL }}{{ filepath }}" target="_blank">{{ filename }}</a></td></tr>
+    <tr><td><b>등록일 </b></td><td> {{ created_date }} </td></tr>
+
+</table>
+
+<table  cellspacing = 0 cellpadding = 0 border = 0 width=500>
+    <tr><td>
+        <input type=button value="수정" OnClick="javascript:boardmodify()">
+        <input type=button value="목록" OnClick="javascript:boardlist()">
+        <input type=button value="삭제" OnClick="javascript:boarddelete()">
+    </td></tr>
+</table>
+</body>
+</html>
