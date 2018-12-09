@@ -54,6 +54,7 @@ public class Synth : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        
         modeChange.GetComponentInChildren<Text>().text = "Leap motion\nmode";
 
         if (Int32.Parse(gameObject.name) > 12 && Int32.Parse(gameObject.name) < 30)
@@ -125,13 +126,6 @@ public class Synth : MonoBehaviour {
     void isleap()
     {
         isLeap = !isLeap;
-        if (!isLeap)
-            modeChange.GetComponentInChildren<Text>().text = "Keyboard\nmode";
-        else
-        {
-            modeChange.GetComponentInChildren<Text>().text = "Leap motion\nmode";
-        }
-        
     }
 
     void Leap()
@@ -149,6 +143,7 @@ public class Synth : MonoBehaviour {
         if (Input.GetKeyDown(myKey))
         {
             audio.PlayOneShot(audio.clip, 1f);
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, 4f));
             gain = 0.5f;
         }
 

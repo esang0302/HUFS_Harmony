@@ -8,7 +8,7 @@ public class KeyPress : MonoBehaviour {
     float MaxZRotation = 5.0f;
     float ZRotationResetVelocity = - 0.3f;
     float ResetPlayTime;
-    bool isLeap;
+    public bool isLeap;
     private bool collided;
     private float currentResetPlayTime;
     private Vector3 initialPosition;
@@ -27,12 +27,12 @@ public class KeyPress : MonoBehaviour {
     }
     void Start () {
 
-        modeChange.GetComponentInChildren<Text>().text = "Leap motion\nmode";
+        
         if (Int32.Parse(gameObject.name) > 12 && Int32.Parse(gameObject.name) < 30)
             myKey = key[Int32.Parse(gameObject.name) - 13];
         else
             myKey = "0";
-        isLeap = true;
+        isLeap = false;
         currentResetPlayTime = 0;
         audio = gameObject.GetComponent<AudioSource>();
         ResetPlayTime = 0.4f;
@@ -44,14 +44,13 @@ public class KeyPress : MonoBehaviour {
         currentResetPlayTime += Time.deltaTime;
 
         if (isLeap)
-
             Leap();
         else
             NotLeap();
 
-        if (transform.rotation.eulerAngles.z > 0.2f && !collided)
+        if (transform.rotation.eulerAngles.z > 0.2f && !collided && isLeap)
         {
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, -0.2f));
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, -0.4f));
             GetComponent<Rigidbody>().angularDrag = 0;
             GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         }
@@ -77,13 +76,6 @@ public class KeyPress : MonoBehaviour {
     void isleap()
     {
         isLeap = !isLeap;
-        if (!isLeap)
-            modeChange.GetComponentInChildren<Text>().text = "Keyboard\nmode";
-        else
-        {
-            modeChange.GetComponentInChildren<Text>().text = "Leap motion\nmode";
-        }
-
     }
 
     void Leap()
@@ -92,32 +84,47 @@ public class KeyPress : MonoBehaviour {
         {
             audio.PlayOneShot(audio.clip, 1f);
             currentResetPlayTime = 0f;
-        };
+        }
+
     }
     void NotLeap()
     {
         if (Input.GetKeyDown(myKey))
         {
+            audio.volume = 1f;
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, 4f));
             audio.PlayOneShot(audio.clip, 1f);
             currentResetPlayTime = 0f;
-            Debug.Log("눌렀다");
+            Debug.Log(myKey);
+        }
+        if (Input.GetKeyUp(myKey))
+        {
+            StartCoroutine(keyToOrigin());
+
+        }
+    }
+
+    public IEnumerator keyToOrigin()
+    {
+        
+        while (transform.rotation.eulerAngles.z > 0.2f && !Input.GetKeyDown(myKey))
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, -0.2f));
+            audio.volume -= Time.deltaTime*2.5f;
+            yield return null;
         }
     }
 
 
-
-
-
-    private void OnCollisionExit(Collision collision)
+        private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag == "target")
+        if (collision.gameObject.tag == "bonesPiano")
             collided = false;
-        
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "target")
+        if (collision.gameObject.tag == "bonesPiano")
             collided = true;
     }
 }

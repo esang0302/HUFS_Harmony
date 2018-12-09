@@ -431,7 +431,7 @@ namespace Leap.Unity.Interaction {
           GameObject contactBoneObj = new GameObject("Contact Fingerbone", typeof(CapsuleCollider), typeof(Rigidbody), typeof(ContactBone));
           contactBoneObj.layer = manager.contactBoneLayer;
           contactBoneObj.transform.localScale = new Vector3(0.1f,0.1f,0.1f);
-          contactBoneObj.tag = "target";
+          contactBoneObj.tag = "bonesPiano";
           Bone bone = _unwarpedHandData.Fingers[fingerIndex]
                                        .Bone((Bone.BoneType)(jointIndex) + 1); // +1 to skip first bone.
           int boneArrayIndex = fingerIndex * BONES_PER_FINGER + jointIndex;

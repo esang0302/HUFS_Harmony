@@ -190,8 +190,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 473313532}
-        m_MethodName: electric
+      - m_Target: {fileID: 473313536}
+        m_MethodName: enablePiano
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -201,8 +201,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 473313536}
-        m_MethodName: enablePiano
+      - m_Target: {fileID: 473313532}
+        m_MethodName: checkElectric
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -297,6 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -2596,6 +2597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -3095,6 +3097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -3588,6 +3591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -4126,6 +4130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -5610,6 +5615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -6030,6 +6036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -6886,6 +6893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -8402,6 +8410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -8790,6 +8799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -9122,6 +9132,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: 27ae8b3dbc309bd4b9ee039f8bc3e04a, type: 2}
+  electricB: {fileID: 3157751}
+  classicB: {fileID: 706744464}
+  leapSelectB: {fileID: 1872397080}
 --- !u!4 &473313533
 Transform:
   m_ObjectHideFlags: 0
@@ -9811,6 +9824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -10394,6 +10408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -10745,6 +10760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -11186,6 +11202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -12508,6 +12525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -13204,8 +13222,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 473313532}
-        m_MethodName: classic
+      - m_Target: {fileID: 473313536}
+        m_MethodName: enablePiano
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13215,8 +13233,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 473313536}
-        m_MethodName: enablePiano
+      - m_Target: {fileID: 473313532}
+        m_MethodName: checkClassic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13425,6 +13443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -13851,6 +13870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -14626,6 +14646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -15153,6 +15174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -15504,6 +15526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -17132,6 +17155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -18011,6 +18035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -18446,6 +18471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -19873,6 +19899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -20224,6 +20251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -21450,6 +21478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -23216,6 +23245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -23599,6 +23629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -24070,6 +24101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -24573,6 +24605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -26076,6 +26109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -27155,6 +27189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -27723,6 +27758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -28367,7 +28403,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1872397081}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 473313532}
+        m_MethodName: checkleap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1872397081
@@ -28598,6 +28645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -29018,6 +29066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
@@ -29444,6 +29493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6fa33652354244f8362c70f7109bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeap: 0
   modeChange: {fileID: 1872397080}
   key:
   - a
