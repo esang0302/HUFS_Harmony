@@ -1,0 +1,29 @@
+{% extends 'Harmony/base.html' %}
+
+{% load staticfiles %}
+
+{% block heading %}
+<header class="intro-header" style="background-image: url('{% static 'bsr/img/home-bg.jpg' %}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="site-heading">
+                  <h1>Harmony Board</h1>
+                  <hr class="small">
+                  <span class="subheading">Signup</span>
+              </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+
+{% block content %}
+<form method="POST" class="signup-form" action="{% url 'Harmony:signup' %}">
+{% csrf_token %}
+<fieldset style = "width:150">
+    <p>이미 존재하는 계정입니다! 다시 시도해주세요 </p>
+</fieldset>
+</form>
+{% endblock content %}

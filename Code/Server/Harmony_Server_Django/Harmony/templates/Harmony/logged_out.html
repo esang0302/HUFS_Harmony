@@ -1,0 +1,14 @@
+{% extends 'Harmony/base.html' %}
+
+{% block heading %}
+<div class="site-heading">
+    <h1>Harmony Board</h1>
+    <hr class="small">
+    <span class="subheading">Logout</span>
+    <script>
+      alert('로그아웃 성공!')
+      window.location.href="/"
+    </script>
+    <a href="{% url 'Harmony:signin'%}">다시 로그인하기</a>
+</div>
+{% endblock heading %}
