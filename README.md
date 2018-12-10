@@ -1,5 +1,5 @@
 <img src="./image/harmony.jpg">
- 
+
 ## LeapMotion을 이용한 가상악기 연주 및 음악 창작 공유 플랫폼 (Harmony)
 
 # 프로젝트 소개
@@ -20,3 +20,23 @@
 
 > 김세용 김준영 김진우 유진솔 김정민
 <img src="./image/together.png">
+
+## Harmony Service
+<img src="./image/1.png">
+<img src="./image/2.png">
+<img src="./image/3.png">
+<img src="./image/4.png">
+<img src="./image/5.png">
+<img src="./image/6.png">
+<img src="./image/7.png">
+<img src="./image/8.png">
+
+## Harmony 악기 연주 guide
+### Drum
+<img src="./image/drum.png">
+
+### Keyboard
+<img src="./image/keyboard.png">
+
+### Launch pad
+<img src="./image/launchpad.png">
