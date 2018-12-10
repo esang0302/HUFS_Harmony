@@ -243,7 +243,7 @@ def postdelete(request):
         curs.execute(q1)
         conn.commit()
         deletedata = """
-                   Delete from HarmonyDataBase.Posts where Post.postnum = %s;
+                   Delete from HarmonyDataBase.Posts where Posts.postnum = %s;
                     """
         curs.execute(deletedata, pk)
         conn.commit()
