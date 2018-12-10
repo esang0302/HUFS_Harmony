@@ -16,7 +16,7 @@ public class KeyPress : MonoBehaviour {
     private AudioSource audio;
     private AudioClip clip;
     public Button modeChange;
-    public string[] key = new string[17] { "a", "w", "s", "e", "d", "f", "t", "g", "y", "h", "u", "j", "k", "o", "l", "p", ";" };
+    string[] key = new string[24] { "q", "2", "w", "3", "e", "r", "5", "t", "6", "y", "7", "u", "c", "f", "v", "g", "b", "n", "j", "m", "k", ",", "l", "."};
     public string myKey;
 
     private void Awake()
@@ -28,7 +28,7 @@ public class KeyPress : MonoBehaviour {
     void Start () {
 
         
-        if (Int32.Parse(gameObject.name) > 12 && Int32.Parse(gameObject.name) < 30)
+        if (Int32.Parse(gameObject.name) > 12)
             myKey = key[Int32.Parse(gameObject.name) - 13];
         else
             myKey = "0";
@@ -57,7 +57,7 @@ public class KeyPress : MonoBehaviour {
         //Can't over the limit of pressing 
         if (transform.rotation.eulerAngles.z > MaxZRotation)
         {
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, MaxZRotation);
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, MaxZRotation-0.2f);
             GetComponent<Rigidbody>().angularDrag = 0;
             GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         }

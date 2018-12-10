@@ -13,7 +13,7 @@ public class pianoPlay : MonoBehaviour {
     public Button classicB;
     public Button leapSelectB;
 
-    bool isleap;
+    public bool isleap;
     bool isClassic;
     int modeCount;
 

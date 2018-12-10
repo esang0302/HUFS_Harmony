@@ -43,7 +43,7 @@ public class Synth : MonoBehaviour {
     public float[] frequencies = new float[37] {0, 65, 69, 73, 78, 82, 87, 92.5f, 98, 104, 110, 116.5f, 123.5f,
                                                     131, 138.5f, 147, 155.5f, 167, 174.5f, 185, 196, 207.5f, 220, 233, 247,
                                                         261.5f, 277, 293.5f, 311, 330, 349, 370, 392, 415.5f, 440, 466, 494};
-    public string[] key = new string[17] { "a", "w", "s", "e", "d", "f", "t", "g", "y", "h", "u", "j", "k", "o", "l", "p", ";" };
+    string[] key = new string[24] { "q", "2", "w", "3", "e", "r", "5", "t", "6", "y", "7", "u", "c", "f", "v", "g", "b", "n", "j", "m", "k", ",", "l", "." };
     private void Awake()
     {
         
@@ -55,14 +55,14 @@ public class Synth : MonoBehaviour {
     // Use this for initialization
     void Start () {
         
-        modeChange.GetComponentInChildren<Text>().text = "Leap motion\nmode";
+        modeChange.GetComponentInChildren<Text>().text = GameObject.Find("piano").GetComponent<pianoPlay>().leapSelectB.GetComponentInChildren<Text>().text;
 
-        if (Int32.Parse(gameObject.name) > 12 && Int32.Parse(gameObject.name) < 30)
+        if (Int32.Parse(gameObject.name) > 12)
             myKey = key[Int32.Parse(gameObject.name) - 13];
         else
             myKey ="0";
 
-        isLeap = true;
+        isLeap = GameObject.Find("piano").GetComponent<pianoPlay>().isleap;
         harmonicValue = 0;
         frequency = frequencies[Int32.Parse(gameObject.name)];
         ResetPlayTime = 0.4f;
@@ -86,7 +86,7 @@ public class Synth : MonoBehaviour {
             Leap();
         else
             NotLeap();
-        if (transform.rotation.eulerAngles.z > 0.2f && !collided)
+        if (transform.rotation.eulerAngles.z > 0.2f && !collided && isLeap)
         {
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, -0.2f));
             GetComponent<Rigidbody>().angularDrag = 0;
@@ -95,7 +95,7 @@ public class Synth : MonoBehaviour {
         //Can't over the limit of pressing 
         if (transform.rotation.eulerAngles.z > MaxZRotation)
         {
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, MaxZRotation);
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, MaxZRotation-0.2f);
             GetComponent<Rigidbody>().angularDrag = 0;
             GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         }
@@ -142,6 +142,7 @@ public class Synth : MonoBehaviour {
     {
         if (Input.GetKeyDown(myKey))
         {
+
             audio.PlayOneShot(audio.clip, 1f);
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, 4f));
             gain = 0.5f;
@@ -150,8 +151,20 @@ public class Synth : MonoBehaviour {
         if (Input.GetKeyUp(myKey))
         {
             gain = 0;
+            StartCoroutine(keyToOrigin());
         }
     }
+
+    public IEnumerator keyToOrigin()
+    {
+
+        while (transform.rotation.eulerAngles.z > 0.2f && !Input.GetKeyDown(myKey))
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, -0.2f));
+            yield return null;
+        }
+    }
+
     public void OnAudioFilterRead(float[] data, int channels)
     {
         increment = frequency * 2.0 * Mathf.PI / sampling_frequency;
