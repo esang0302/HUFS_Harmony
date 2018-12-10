@@ -48,7 +48,7 @@
 </script>
 	{% autoescape off %}
 	<tr><td><b>내용 </b></td><td width=350> {{ contents }} </td></tr>
-    <br><tr><td><b>파일 다운로드 </b></td><td><a href="{{ MEDIA_URL }}{{ filepath }}" target="_blank">{{ filename }}</a></td></tr></br>
+    <br><tr><td><b>파일 다운로드 </b></td><td><a href="{{ MEDIA_URL }}{{ filepath }}">{{ filename }}</a></td></tr></br>
     <tr><td><b>등록일 </b></td><td> {{ created_date }} </td></tr>
 	{% endautoescape %}
 
